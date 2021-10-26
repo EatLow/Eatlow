@@ -2,6 +2,7 @@
 
 [OUT] : Logged-out user / Non-registered user
 
+-
 
 [MAIN] : Main functionality / High priority
 
