@@ -12,3 +12,5 @@
 [EXTRA] : Features we're not sure yet to add to the project
 
 [DROP] : Features we thought about but chosed not to add to the project
+
+⭐ : Level of difficulty
