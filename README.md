@@ -1,3 +1,4 @@
+## technical term
 [IN]  : Logged-in user
 
 [OUT] : Logged-out user / Non-registered user
