@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
     AppComponent,
 
   ],
+  exports: [
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule
