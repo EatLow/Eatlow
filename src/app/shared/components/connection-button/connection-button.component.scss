@@ -1,5 +1,11 @@
-.send-button {
+.active {
   background: #000000;
+}
+
+.disabled {
+  background: #d11818;
+}
+button {
   width: 100%;
   font-weight: 600;
   color: #fff;
