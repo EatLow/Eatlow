@@ -1,24 +1,19 @@
-button {
-  width: 75%;
-  height: 75%;
-  margin-top: 15%;
-  margin-bottom: 15%;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 15px;
-}
-
 .mother {
-  width: 1000;
-  height: 1000;
+  max-width: 800px;
+  width: 90%;
   margin-top: 5%;
+  margin-bottom: 5%;
   margin-left: 5%;
   margin-right: 5%;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  padding-right: 10%;
-  padding-left: 10%;
+  padding-top: clamp(0px, 5%, 80px);
+  padding-bottom: clamp(0px, 5%, 80px);
+  padding-right: clamp(0px, 10%, 100px);
+  padding-left: clamp(0px, 10%, 100px);
   border: 1px solid black;
-  border-radius: 45px;
+  border-radius: 10%;
   background: rgba(255, 255, 255, 0.75);
+}
+
+.col {
+  border: 1px solid black;
 }
