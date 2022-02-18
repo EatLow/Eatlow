@@ -8,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterFormComponent implements OnInit
 {
-  registerForm: FormGroup = new FormGroup({
+  public registerForm: FormGroup = new FormGroup({
     email: new FormControl('', Validators.required),
     lastname: new FormControl('', Validators.required),
     firstname: new FormControl('', Validators.required),
