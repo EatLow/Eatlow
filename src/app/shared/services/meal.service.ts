@@ -9,7 +9,7 @@ import { Meal } from '../models/meal/meal';
 })
 export class MealService {
 
-  private urlApiIngredients = environment.urlApi + '/api/ingredients';
+  private urlApiMeals = environment.urlApi + '/api/meals';
 
   meals$ = new BehaviorSubject<Meal[]>([]);
   mealsByName$ = new BehaviorSubject<Meal[]>([]);
@@ -21,12 +21,12 @@ export class MealService {
   }
 
   getAllMeals() {
-    this.http.get<Meal[]>(`${this.urlApiIngredients}/all`).subscribe((ingredients: Meal[]) => {
-      this.meals$.next(ingredients);
+    this.http.get<Meal[]>(`${this.urlApiMeals}`).subscribe((meals: Meal[]) => {
+      this.meals$.next(meals);
     })
   }
 
-  getOneIngredient(id: number) {
+  getOneMeal(id: number) {
     const ingredient = this.meals$.value.filter((i) => {
       return i.id ? i.id === id : false;
     })[0];
@@ -34,7 +34,7 @@ export class MealService {
   }
 
   getIngredientsByName(name: string) {
-    this.http.get<Meal[]>(`${this.urlApiIngredients}/search/${name}`).subscribe((ingredients: Meal[]) => {
+    this.http.get<Meal[]>(`${this.urlApiMeals}/search/${name}`).subscribe((ingredients: Meal[]) => {
       this.mealsByName$.next(ingredients);
     })
   }
