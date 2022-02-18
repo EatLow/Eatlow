@@ -1,0 +1,136 @@
+{
+  "ingredient": [
+    {
+      "id": 0,
+      "name": "string",
+      "dqr": 0,
+      "subGroup": {
+        "id": 0,
+        "nom": "string",
+        "ingredients": ["string"],
+        "ssGrpPlat": [
+          {
+            "id": 0,
+            "name": "string",
+            "subGroupMeal": "string",
+            "ingredients": ["string"],
+            "otherStepCost": 0
+          }
+        ],
+        "groupe": {
+          "id": 0,
+          "nom": "string",
+          "sousGroupe": ["string"]
+        }
+      },
+      "energyCost": {
+        "id": 0,
+        "agriculture": 0,
+        "transformation": 0,
+        "packaging": 0,
+        "transport": 0,
+        "supermarket": 0,
+        "consomation": 0
+      }
+    },
+    {
+      "id": 0,
+      "name": "string",
+      "dqr": 0,
+      "subGroup": {
+        "id": 0,
+        "nom": "string",
+        "ingredients": ["string"],
+        "ssGrpPlat": [
+          {
+            "id": 0,
+            "name": "string",
+            "subGroupMeal": "string",
+            "ingredients": ["string"],
+            "otherStepCost": 0
+          }
+        ],
+        "groupe": {
+          "id": 0,
+          "nom": "string",
+          "sousGroupe": ["string"]
+        }
+      },
+      "energyCost": {
+        "id": 0,
+        "agriculture": 0,
+        "transformation": 0,
+        "packaging": 0,
+        "transport": 0,
+        "supermarket": 0,
+        "consomation": 0
+      }
+    },
+    {
+      "id": 2,
+      "name": "string",
+      "dqr": 0,
+      "subGroup": {
+        "id": 0,
+        "nom": "string",
+        "ingredients": ["string"],
+        "ssGrpPlat": [
+          {
+            "id": 0,
+            "name": "string",
+            "subGroupMeal": "string",
+            "ingredients": ["string"],
+            "otherStepCost": 0
+          }
+        ],
+        "groupe": {
+          "id": 0,
+          "nom": "string",
+          "sousGroupe": ["string"]
+        }
+      },
+      "energyCost": {
+        "id": 0,
+        "agriculture": 0,
+        "transformation": 0,
+        "packaging": 0,
+        "transport": 0,
+        "supermarket": 0,
+        "consomation": 0
+      }
+    },
+    {
+      "id": 3,
+      "name": "string",
+      "dqr": 0,
+      "subGroup": {
+        "id": 0,
+        "nom": "string",
+        "ingredients": ["string"],
+        "ssGrpPlat": [
+          {
+            "id": 0,
+            "name": "string",
+            "subGroupMeal": "string",
+            "ingredients": ["string"],
+            "otherStepCost": 0
+          }
+        ],
+        "groupe": {
+          "id": 0,
+          "nom": "string",
+          "sousGroupe": ["string"]
+        }
+      },
+      "energyCost": {
+        "id": 0,
+        "agriculture": 0,
+        "transformation": 0,
+        "packaging": 0,
+        "transport": 0,
+        "supermarket": 0,
+        "consomation": 0
+      }
+    }
+  ]
+}
