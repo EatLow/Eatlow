@@ -26,7 +26,7 @@ export class IngredientService implements OnInit {
     })
   }
 
-  getOneIngredient(id: number) {
+  getOneIngredient(id: number): Ingredient {
     const ingredient = this.ingredients$.value.filter((i) => {
       return i.id ? i.id === id : false;
     })[0];
@@ -35,8 +35,9 @@ export class IngredientService implements OnInit {
 
   getIngredientsByName(name: string) {
     this.http.get<Ingredient[]>(`${this.urlApiIngredients}/search/${name}`).subscribe((ingredients: IIngredient[]) => {
-      const ingredientsInstance = ingredients.map(i => new Ingredient(i.id, i.name, i.dqr, i.subGroup, i.energyCost));
+      const ingredientsInstance = ingredients.map((i) => new Ingredient(i.id, i.name, i.dqr, i.subGroup, i.energyCost)); 
       this.ingredientsByName$.next(ingredientsInstance);
+      //TODO se poser la question: On a besoin d'envoyer des instances d'Ingredients ou simplement l'object avec la bonne Interface?
     });
   }
 
