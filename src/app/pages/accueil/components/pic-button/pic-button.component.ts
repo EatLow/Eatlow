@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'accueil-pic-button',
@@ -11,5 +11,8 @@ export class PicButtonComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  @Input()
+  public urlPic! : string;
 
 }
