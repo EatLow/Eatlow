@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+<<<<<<< HEAD
 import { ChartDoughnutComponent } from './shared/components/chart-doughnut/chart-doughnut.component';
+=======
+import { HeaderComponent } from './shared/components/header/header.component';
+>>>>>>> b9359a6e88ad82ce04d03def0bdbde03491b4805
 
 
 const routes: Routes = [
