@@ -6,7 +6,10 @@
     "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "compodoc:build": "compodoc -p tsconfig.doc.json",
+    "compodoc:serve": "compodoc -s",
+    "compodoc": "compodoc -p tsconfig.doc.json -s"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +21,7 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
+    "@compodoc/compodoc": "^1.1.18",
     "bootstrap": "^5.1.3",
     "express": "^4.17.2",
     "rxjs": "~7.5.0",

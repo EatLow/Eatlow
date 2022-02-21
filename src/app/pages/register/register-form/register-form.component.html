@@ -1,0 +1,42 @@
+<div class="text-center">
+    <p class="small mt-3">Déjà un compte ?
+        <br>
+        <a routerLinkActive="active" routerLink="/login" class="ps-hero__content__link">Se connecter</a>
+    </p>
+</div>
+<div class="form">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <div class="form-outline mb-4">
+                <input class="form-control" formControlName="email" type="email" placeholder="Email">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-outline mb-4">
+                <input class="form-control" formControlName="lastname" type="text" placeholder="Nom de Famille">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-outline mb-4">
+                <input class="form-control" formControlName="firstname" type="text" placeholder="Prénom">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-outline mb-4">
+                <input class="form-control" formControlName="password" type="password" placeholder="Mot de passe">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-outline mb-4">
+                <input class="form-control" formControlName="confirmPassword" type="password"
+                    placeholder="Confirmez le mot de passe">
+            </div>
+        </div>
+        <app-connection-button [active]="registerForm.valid"></app-connection-button>
+        <div class="text-center">
+            <p class="small mt-3">By signing up, you are indicating that you have read and agree to the <a href="#"
+                    class="ps-hero__content__link">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+            </p>
+        </div>
+    </form>
+</div>
