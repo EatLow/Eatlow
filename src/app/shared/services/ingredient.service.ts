@@ -41,5 +41,10 @@ export class IngredientService implements OnInit {
     });
   }
 
-
+  getIngredientsFromMeal(id: number) {
+    this.http.get<Ingredient[]>(`${this.urlApiIngredients}/ByMeal/${id}`).subscribe((ingredients: IIngredient[]) => {
+      const ingredientsInstance = ingredients.map((i) => new Ingredient(i.id, i.name, i.dqr, i.subGroup, i.energyCost));
+      this.ingredientsByName$.next(ingredientsInstance);
+    });
+  }
 }
