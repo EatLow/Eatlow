@@ -4,9 +4,10 @@ import { ChartDoughnutComponent } from './shared/components/chart-doughnut/chart
 
 
 const routes: Routes = [
-	{ path: 'test', loadChildren: () => import('./pages/pageExemple/page-exemple.module').then(m => m.PageExempleModule) },
+	// { path: 'test', loadChildren: () => import('./pages/pageExemple/page-exemple.module').then(m => m.PageExempleModule) },
+	{ path: 'register', loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule) },
+	{ path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },
 	{ path: 'doug', component: ChartDoughnutComponent  }
-
 ];
 
 @NgModule({

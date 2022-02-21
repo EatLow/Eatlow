@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { EnergyCost } from '../../models/energyCost/energy-cost';
 
 @Component({
@@ -16,8 +16,9 @@ export class ChartDoughnutComponent{
     "supermarket": 0.00243,
     "consomation": 0.00442
     };
-
   ecoScore: number = 5;
+
+  @ViewChild("canvas") canvas!: HTMLCanvasElement;
 
   // @Input() energyCost: object = {};
   // @Input() ecoScore: number = 5;
@@ -82,6 +83,7 @@ export class ChartDoughnutComponent{
   }
 
   private doughnut():any {
+    const canvas = this.canvas.getContext('2d');
   }
 
 
