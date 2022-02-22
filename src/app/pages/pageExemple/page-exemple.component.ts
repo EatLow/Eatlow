@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { IngredientService } from 'src/app/shared/services/ingredient.service';
 
 @Component({
 	selector: 'app-page-exemple',
 	templateUrl: './page-exemple.component.html',
 	styleUrls: ['./page-exemple.component.scss']
 })
-export class PageExempleComponent {
-	constructor(private ingredientService: IngredientService) {
+export class PageExempleComponent
+{
+	constructor()
+	{
 		console.log('TEST PAGE EXEMPLE');
-		ingredientService.getAllIngredients();
 	}
 }

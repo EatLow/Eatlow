@@ -8,31 +8,63 @@
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <div class="form-outline mb-4">
-                <input class="form-control" formControlName="email" email type="email" placeholder="Email">
+                <input class="form-control" formControlName="email" email type="email" placeholder="Email"
+                    [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+                <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                    <div *ngIf="f['email'].errors['required']">Email obligatoire</div>
+                    <div *ngIf="f['email'].errors['email']">Email invalide</div>
+                </div>
             </div>
         </div>
         <div class="form-group">
             <div class="form-outline mb-4">
-                <input class="form-control" formControlName="lastname" type="text" placeholder="Nom de Famille">
+                <input class="form-control" formControlName="lastname" type="text" placeholder="Nom de Famille"
+                    [ngClass]="{ 'is-invalid': submitted && f['lastname'].errors }">
+                <div *ngIf="submitted && f['lastname'].errors" class="invalid-feedback">
+                    <div *ngIf="f['lastname'].errors['required']">Nom de famille obligatoire</div>
+                </div>
             </div>
         </div>
         <div class="form-group">
             <div class="form-outline mb-4">
-                <input class="form-control" formControlName="firstname" type="text" placeholder="Prénom">
+                <input class="form-control" formControlName="firstname" type="text" placeholder="Prénom"
+                    [ngClass]="{ 'is-invalid': submitted && f['firstname'].errors }">
+                <div *ngIf="submitted && f['firstname'].errors" class="invalid-feedback">
+                    <div *ngIf="f['firstname'].errors['required']">Prénom obligatoire</div>
+                </div>
             </div>
         </div>
         <div class="form-group">
             <div class="form-outline mb-4">
-                <input class="form-control" formControlName="password" type="password" placeholder="Mot de passe">
+                <input class="form-control" formControlName="password" type="password" placeholder="Mot de passe"
+                    [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+                <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                    <div *ngIf="f['password'].errors['required']">Mot de passe obligatoire</div>
+                    <div *ngIf="f['password'].errors['minlength']">
+                        Le mot de passe doit contenir au moins 3 craratères
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group">
             <div class="form-outline mb-4">
                 <input class="form-control" formControlName="confirmPassword" type="password"
-                    placeholder="Confirmez le mot de passe">
+                    placeholder="Confirmez le mot de passe"
+                    [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }">
+                <div *ngIf="submitted && f['confirmPassword'].errors" class="invalid-feedback">
+                    <div *ngIf="f['confirmPassword'].errors['required']">
+                        Confirmation de mot de passe obligatoire
+                    </div>
+                    <div *ngIf="f['confirmPassword'].errors['matching']">
+                        Confirmation de mot de passe de correspond pas
+                    </div>
+                </div>
             </div>
+
         </div>
-        <app-connection-button [active]="registerForm.valid"></app-connection-button>
+
+        <app-connection-button [active]="true"></app-connection-button>
+
         <div class="text-center">
             <p class="small mt-3">By signing up, you are indicating that you have read and agree to the <a href="#"
                     class="ps-hero__content__link">Terms of Use</a> and <a href="#">Privacy Policy</a>.
