@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService implements OnInit {
 
-  private urlApiAuth = environment.urlApi + '/api/meals/api/public/auth';
+  private urlApiAuth = environment.urlApi + '/api/public/auth';
   private headers = new HttpHeaders().set('Accept', 'application/json').set('Content-Type', 'application/json');
   isAuth$ = new BehaviorSubject(false);
 
@@ -32,17 +32,13 @@ export class AuthService implements OnInit {
 
     this.http.post(`${this.urlApiAuth}/isValid`, JSON.stringify({ token }), { 'headers': this.headers }).subscribe({
       next: (response: any) => {
-        console.log('TEST CONNECTED !');
         const isConnect: boolean = response.isValid;
-        console.log('isConnect is :', isConnect);
         this.isAuth$.next(isConnect);
       },
       error: () => {
-        console.log('TEST isConnected error !');
         this.isAuth$.next(false);
       }
-    }
-    );
+    });
   }
 
   /**
@@ -78,8 +74,8 @@ export class AuthService implements OnInit {
   /**
    * save the user on DB, and connect it
    */
-  register() {
-    this.http.post<{ token: string }>(`${this.urlApiAuth}/login`, {}, { headers: this.headers }).subscribe((response: { token: string }) => {
+  register(lastname: string, firstname: string, email: string, password: string) {
+    this.http.post<{ token: string }>(`${this.urlApiAuth}/login`, JSON.stringify({ lastname, firstname, email, password }), { headers: this.headers }).subscribe((response: { token: string }) => {
       const token = response.token;
       sessionStorage.setItem('token', token);
       this.router.navigate(['/home']); //TODO verifier la route 
