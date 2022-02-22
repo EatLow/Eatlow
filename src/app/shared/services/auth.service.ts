@@ -32,13 +32,10 @@ export class AuthService implements OnInit {
 
     this.http.post(`${this.urlApiAuth}/isValid`, JSON.stringify({ token }), { 'headers': this.headers }).subscribe({
       next: (response: any) => {
-        console.log('TEST CONNECTED !');
         const isConnect: boolean = response.isValid;
-        console.log('isConnect is :', isConnect);
         this.isAuth$.next(isConnect);
       },
       error: () => {
-        console.log('TEST isConnected error !');
         this.isAuth$.next(false);
       }
     });
