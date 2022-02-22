@@ -63,7 +63,7 @@ export class AuthService implements OnInit {
             reject(false);
           }
         });
-    })
+    });
   }
 
   logout() {

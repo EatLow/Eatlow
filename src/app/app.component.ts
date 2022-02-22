@@ -9,8 +9,6 @@ import { IngredientService } from './shared/services/ingredient.service';
 export class AppComponent {
 
   constructor(private ingredientService: IngredientService) {
-    console.log('TEST PAGE EXEMPLE');
-    ingredientService.getAllIngredients();
   }
   title = 'EatLow';
 }
