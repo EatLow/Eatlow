@@ -10,6 +10,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent
   ],
   exports: [
   ],
@@ -23,4 +24,3 @@ import { HeaderComponent } from './shared/components/header/header.component';
 })
 
 export class AppModule { }
-
