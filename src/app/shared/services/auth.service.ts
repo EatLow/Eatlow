@@ -11,10 +11,12 @@ export class AuthService implements OnInit
 {
 
   private urlApiAuth = environment.urlApi + '/api/public/auth';
+
   private headers = new HttpHeaders()
     .set('Accept', 'application/json')
     .set('Content-Type', 'application/json')
     .set('Access-Control-Allow-Credentials', 'true');
+
 
   isAuth$ = new ReplaySubject<boolean>();
 
@@ -25,7 +27,6 @@ export class AuthService implements OnInit
 
   ngOnInit(): void
   {
-
   }
 
   /**
@@ -41,6 +42,7 @@ export class AuthService implements OnInit
       return;
     }
 
+
     this.http.post(`${this.urlApiAuth}/isTokenValid`, JSON.stringify({ token }),
       { 'headers': this.headers, withCredentials: true })
       .subscribe({
@@ -55,8 +57,6 @@ export class AuthService implements OnInit
           sessionStorage.removeItem('token');
         }
       });
-
-
   }
 
   /**
