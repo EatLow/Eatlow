@@ -19,4 +19,8 @@ export class EnergyCost implements IEnergyCost
         public transport: number,
         public supermarket: number,
         public consomation: number) { }
+
+        get ecoScore(): number {
+            return this.agriculture + this.transformation + this.supermarket + this.packaging + this.transport + this.consomation;
+        };
 }
