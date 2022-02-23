@@ -15,4 +15,7 @@ export class PicButtonComponent implements OnInit {
   @Input()
   public urlPic! : string;
 
+  @Input()
+  public title! : string;
+
 }

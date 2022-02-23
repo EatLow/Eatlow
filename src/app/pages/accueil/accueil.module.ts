@@ -1,3 +1,4 @@
+import { SharedComponentsModule } from './../../shared/components/shared-components.module';
 import { AccueilRoutingModule } from './accueil-routing.module';
 import { AccueilComponent } from './accueil.component';
 import { TitleComponent } from './components/title/title.component';
@@ -17,7 +18,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     RouterModule,
-    AccueilRoutingModule
+    AccueilRoutingModule,
+    SharedComponentsModule
   ]
 })
 export class AccueilModule { }
