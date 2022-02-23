@@ -6,7 +6,7 @@ import { IsNotLoggedInGuard } from './shared/guards/is-not-logged-in.guard';
 
 
 const routes: Routes = [
-  { path: 'acc', loadChildren: () => import('./pages/accueil/accueil.module').then(m => m.AccueilModule) },
+  { path: '/', loadChildren: () => import('./pages/accueil/accueil.module').then(m => m.AccueilModule) },
 	{
 		path: 'register',
 		canActivate: [IsNotLoggedInGuard],
