@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-connection-button',
@@ -7,9 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ConnectionButtonComponent implements OnInit
 {
-
-  @Input("active")
-  public active: boolean = false;
   constructor() { }
 
   ngOnInit(): void
