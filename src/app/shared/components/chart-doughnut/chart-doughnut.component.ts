@@ -3,6 +3,13 @@ import { Chart, registerables } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { EnergyCost } from '../../models/energyCost/energy-cost';
 
+enum Colors {
+  RED = "hsla(0, 100%, 50%, 1)",
+  OREANGE = "hsla(30, 100%, 50%, 1)",
+  YELLOW = "hsla(60, 100%, 50%, 1)",
+  SOFTGREEN = "hsla(90, 100%, 50%, 1)",
+  GREEN = "hsla(120, 100%, 50%, 1)",
+}
 @Component({
   selector: 'app-chart-doughnut',
   templateUrl: './chart-doughnut.component.html',
@@ -18,33 +25,13 @@ export class ChartDoughnutComponent implements OnInit {
     supermarket: 0.00243,
     consomation: 0.00442,
   };
-
   ecoScore: number = 5;
-
   canvas: any;
-
   ctx: any;
-
-  size: string = "30px";
-
-  resizeDoughnut(event:any) {
-    event.target.innerWidth
-    if(event.target.innerWidth <= 425) {
-      this.size = "20px";
-      console.log(event.target.innerWidth);
-      console.log(this.size);
-    } else {
-      this.size = "30px";
-      console.log(event.target.innerWidth);
-      console.log(this.size);
-    }
-    this.centerText()
-  }
 
   ngOnInit(): void {
     Chart.register(...registerables);
     Chart.register(ChartDataLabels);
-    
     this.createDoughnut();
   }
 
@@ -93,7 +80,7 @@ export class ChartDoughnutComponent implements OnInit {
   private centerText(): any {
     const ecoScore = this.ecoScore;
     const color = this.color();
-    const size = this.size;
+    const size = window.innerWidth >= 425 ? "30px" : "20px";
 
     const centerText = {
       id: 'centerText',
@@ -101,12 +88,12 @@ export class ChartDoughnutComponent implements OnInit {
           const { ctx, chartArea: { top, right, bottom, left, width, height }} = chart;
           ctx.save();
           ctx.font = `bolder ${size} Varela`;
-          ctx.fillStyle = '#000';
+          ctx.fillStyle = '#4a4a4a';
           ctx.textAlign = 'center';
           ctx.fillText('EcoScore:', width / 2, height / 2 + top);
           ctx.restore();
 
-          ctx.font = `bolder ${size} Arial`;
+          ctx.font = `bolder ${size } Arial`;
           ctx.fillStyle = color;
           ctx.textAlign = 'center';
           ctx.fillText(ecoScore, width / 2, height / 1.7 + top);
@@ -118,11 +105,11 @@ export class ChartDoughnutComponent implements OnInit {
 
   private color(): string {
     let color: string = '';
-    if (this.ecoScore > 0 && this.ecoScore <= 1) color = '#79eb6f';
-    else if (this.ecoScore > 1 && this.ecoScore <= 2) color = '#cfea2a';
-    else if (this.ecoScore > 2 && this.ecoScore <= 3) color = '#fefe32';
-    else if (this.ecoScore > 3 && this.ecoScore < 4) color = '#fd5307';
-    else color = '#fe2712';
+    if (this.ecoScore > 0 && this.ecoScore <= 1) color = Colors.GREEN;
+    else if (this.ecoScore > 1 && this.ecoScore <= 2) color = Colors.SOFTGREEN;
+    else if (this.ecoScore > 2 && this.ecoScore <= 3) color = Colors.YELLOW;
+    else if (this.ecoScore > 3 && this.ecoScore < 4) color = Colors.OREANGE;
+    else color = Colors.RED;
     return color;
   }
 
