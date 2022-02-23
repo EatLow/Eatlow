@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent
 {
+
+  constructor()
+  {
+    console.log('TEST PAGE EXEMPLE');
+  }
   title = 'EatLow';
 }
