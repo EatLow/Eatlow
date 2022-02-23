@@ -1,8 +1,9 @@
-<div class='mother row'>
-  <div class="col">
-    <button class="btn1 btn-success">Login</button>
+
+<div *ngIf="!isAuth" class='mother row'>
+  <div class="col-6">
+    <button routerLink="login" class="btn1 btn-success">Connexion</button>
   </div>
-  <div class="col">
-    <button class="btn2">Logout</button>
+  <div class="col-6">
+    <button routerLink="register" class="btn2">Inscription</button>
   </div>
 </div>
