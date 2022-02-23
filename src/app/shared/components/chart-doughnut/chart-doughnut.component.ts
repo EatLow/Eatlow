@@ -4,11 +4,11 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { EnergyCost } from '../../models/energyCost/energy-cost';
 
 enum Colors {
-  RED = "hsla(0, 100%, 50%, 1)",
-  OREANGE = "hsla(30, 100%, 50%, 1)",
-  YELLOW = "hsla(60, 100%, 50%, 1)",
-  SOFTGREEN = "hsla(90, 100%, 50%, 1)",
-  GREEN = "hsla(120, 100%, 50%, 1)",
+  RED = "hsla(0, 70%, 50%, 1)",
+  ORANGE = "hsla(30, 70%, 50%, 1)",
+  YELLOW = "hsla(60, 70%, 50%, 1)",
+  SOFTGREEN = "hsla(90, 70%, 50%, 1)",
+  GREEN = "hsla(120, 70%, 50%, 1)",
 }
 @Component({
   selector: 'app-chart-doughnut',
@@ -97,7 +97,7 @@ export class ChartDoughnutComponent implements OnInit {
     if (this.energyCost.ecoScore > 0 && this.energyCost.ecoScore <= 1) color = Colors.GREEN;
     else if (this.energyCost.ecoScore > 1 && this.energyCost.ecoScore <= 2) color = Colors.SOFTGREEN;
     else if (this.energyCost.ecoScore > 2 && this.energyCost.ecoScore <= 3) color = Colors.YELLOW;
-    else if (this.energyCost.ecoScore > 3 && this.energyCost.ecoScore < 4) color = Colors.OREANGE;
+    else if (this.energyCost.ecoScore > 3 && this.energyCost.ecoScore < 4) color = Colors.ORANGE;
     else color = Colors.RED;
     return color;
   }

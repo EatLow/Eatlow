@@ -1,0 +1,46 @@
+$RED: hsla(0, 70%, 50%, 1);
+$ORANGE: hsla(30, 70%, 50%, 1);
+$YELLOW: hsla(60, 70%, 50%, 1);
+$SOFTGREEN: hsla(90, 70%, 50%, 1);
+$GREEN: hsla(120, 70%, 50%, 1);
+
+.red {
+    color : $RED;
+}
+
+.orange {
+    color : $ORANGE;
+}
+
+.yellow {
+    color : $YELLOW;
+}
+
+.softgreen {
+    color : $SOFTGREEN;
+}
+
+.green {
+    color : $GREEN;
+}
+
+.wrapper-aliment {
+    padding-top: 45px ;
+    font-family: "Varela";
+}
+.environemental-score {
+    padding: 15px;
+    width: 250px;
+    margin: 80px auto 0px auto;
+    background-color: rgba(173, 162, 147, 0.424);
+    border-radius: 20px;
+}
+
+.environemental-score-txt {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.environemental-score-txt-score {
+    font-size: 30px;
+}

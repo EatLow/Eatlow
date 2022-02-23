@@ -5,12 +5,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/components/header/header.component';
+import { PageIngredientComponent } from './pages/page-ingredient/page-ingredient.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     AppComponent,
+    PageIngredientComponent,
   ],
   exports: [
   ],
