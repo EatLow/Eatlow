@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { EnergyCost } from '../../models/energyCost/energy-cost';
@@ -16,18 +16,7 @@ enum Colors {
   styleUrls: ['./chart-doughnut.component.scss'],
 })
 export class ChartDoughnutComponent implements OnInit {
-  energyCost: EnergyCost = {
-    id: 3947,
-    agriculture: 0.0,
-    transformation: 0.05078,
-    packaging: 0.05165,
-    transport: 0.01375,
-    supermarket: 0.00243,
-    consomation: 0.00442,
-  };
-  ecoScore: number = 5;
-  canvas: any;
-  ctx: any;
+  @Input() energyCost!:EnergyCost;
 
   ngOnInit(): void {
     Chart.register(...registerables);
@@ -78,7 +67,7 @@ export class ChartDoughnutComponent implements OnInit {
   }
 
   private centerText(): any {
-    const ecoScore = this.ecoScore;
+    const ecoScore = this.energyCost.ecoScore;
     const color = this.color();
     const size = window.innerWidth >= 425 ? "30px" : "20px";
 
@@ -105,10 +94,10 @@ export class ChartDoughnutComponent implements OnInit {
 
   private color(): string {
     let color: string = '';
-    if (this.ecoScore > 0 && this.ecoScore <= 1) color = Colors.GREEN;
-    else if (this.ecoScore > 1 && this.ecoScore <= 2) color = Colors.SOFTGREEN;
-    else if (this.ecoScore > 2 && this.ecoScore <= 3) color = Colors.YELLOW;
-    else if (this.ecoScore > 3 && this.ecoScore < 4) color = Colors.OREANGE;
+    if (this.energyCost.ecoScore > 0 && this.energyCost.ecoScore <= 1) color = Colors.GREEN;
+    else if (this.energyCost.ecoScore > 1 && this.energyCost.ecoScore <= 2) color = Colors.SOFTGREEN;
+    else if (this.energyCost.ecoScore > 2 && this.energyCost.ecoScore <= 3) color = Colors.YELLOW;
+    else if (this.energyCost.ecoScore > 3 && this.energyCost.ecoScore < 4) color = Colors.OREANGE;
     else color = Colors.RED;
     return color;
   }
