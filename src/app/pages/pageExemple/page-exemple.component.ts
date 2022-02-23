@@ -5,8 +5,10 @@ import { Component } from '@angular/core';
 	templateUrl: './page-exemple.component.html',
 	styleUrls: ['./page-exemple.component.scss']
 })
-export class PageExempleComponent {
-	constructor() {
+export class PageExempleComponent
+{
+	constructor()
+	{
 		console.log('TEST PAGE EXEMPLE');
 	}
 }
