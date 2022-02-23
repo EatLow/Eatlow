@@ -12,7 +12,7 @@ const routes: Routes = [
 		canActivate: [IsNotLoggedInGuard],
 		loadChildren: () =>
 			import('./pages/register/register.module')
-				.then(m => m.RegisterModule)
+				.then(m => m.RegisterModule) 
 	},
 	{
 		path: 'login',
