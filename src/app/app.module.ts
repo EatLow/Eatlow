@@ -5,14 +5,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/components/header/header.component';
-import { SelectMealComponent } from './pages/select-meal/select-meal.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    AppComponent,
-    SelectMealComponent,
+    AppComponent
   ],
   exports: [
   ],

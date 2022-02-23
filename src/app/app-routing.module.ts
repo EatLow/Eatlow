@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './pages/accueil/accueil.component';
-import { Select } from './pages/accueil/accueil.component';
 
 import { IsNotLoggedInGuard } from './shared/guards/is-not-logged-in.guard';
 
 
 const routes: Routes = [
-  { path: 'acc', loadChildren: () => import('./pages/accueil/accueil.module').then(m => m.AccueilModule) },
-  { path: 'sel', loadChildren: () => import('./pages/sel/accueil.module').then(m => m.AccueilModule) },
+  { path: '/', loadChildren: () => import('./pages/accueil/accueil.module').then(m => m.AccueilModule) },
 	{
 		path: 'register',
 		canActivate: [IsNotLoggedInGuard],
