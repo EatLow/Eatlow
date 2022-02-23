@@ -9,7 +9,6 @@ import { AuthService } from '../../../../shared/services/auth.service';
 })
 export class LoggingButtonsComponent implements OnInit
 {
-
   public isAuth: boolean = false;
 
   constructor(private _authService: AuthService) { }
