@@ -14,11 +14,11 @@ export class IngredientService implements OnInit {
   ingredients$ = new BehaviorSubject<IIngredient[]>([]);
   ingredientsByName$ = new BehaviorSubject<Ingredient[]>([]);
 
-  constructor(private http: HttpClient) { }
-
-  ngOnInit() {
+  constructor(private http: HttpClient) {
     this.getAllIngredients();
-  }
+   }
+
+  ngOnInit() {  }
 
   getAllIngredients() {
     this.http.get<IIngredient[]>(`${this.urlApiIngredients}`).subscribe((ingredients: IIngredient[]) => {
@@ -30,6 +30,8 @@ export class IngredientService implements OnInit {
     const ingredient = this.ingredients$.value.filter((i) => {
       return i.id ? i.id === id : false;
     })[0];
+    console.log(this.ingredients$.value);
+    // TODO réparer
     return new Ingredient(ingredient.id, ingredient.name, ingredient.dqr, ingredient.subGroup, ingredient.energyCost);
   }
 

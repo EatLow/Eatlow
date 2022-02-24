@@ -1,4 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Ingredient } from 'src/app/shared/models/ingredient/ingredient';
+import { IngredientService } from 'src/app/shared/services/ingredient.service';
 
 @Component({
   selector: 'app-page-ingredient',
@@ -8,8 +11,10 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 export class PageIngredientComponent implements OnInit {
   score:number = 0.23;
   dqr:string = "0.14";
+  ingredient!:Ingredient;
+  
 
-  constructor() { }
+  constructor(private router :ActivatedRoute, private _ingredientservice :IngredientService) { }
   setColor() :string {
     let color: string = '';
     if (this.score > 0 && this.score <= 1) color = "green";
@@ -20,10 +25,8 @@ export class PageIngredientComponent implements OnInit {
     return color;
   }
   ngOnInit(): void {
+    const id = this.router.snapshot.params["id"];
+    this.ingredient = this._ingredientservice.getOneIngredient(parseInt(id, 10));
   }
 
 }
-
-// TODO récupérer l'ingrédient selon l'id récupérer
-// TODO récupérer passer le dqr
-// TODO Passer l'EnergyCost de l'ingrédient

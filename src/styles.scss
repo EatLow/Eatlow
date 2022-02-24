@@ -2,3 +2,8 @@
     font-family: "Varela";
     src: local("Varela"), url(./assets/fonts/Varela-Regular.ttf) format("truetype");
 }
+
+body {
+    background:  center / cover no-repeat url("/assets/images/Une-feuille-de-Ginkgo-Biloba.jpg");
+    background-attachment: fixed;
+}

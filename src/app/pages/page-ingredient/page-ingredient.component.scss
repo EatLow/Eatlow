@@ -25,22 +25,61 @@ $GREEN: hsla(120, 70%, 50%, 1);
 }
 
 .wrapper-aliment {
-    padding-top: 45px ;
-    font-family: "Varela";
+    padding-top: 100px ;
+    font-family: "Varela", sans-serif;
+    h2 {
+        color: #fff;
+        font-size: 40px; 
+    }
 }
+
 .environemental-score {
+    color: #000;
     padding: 15px;
     width: 250px;
-    margin: 80px auto 0px auto;
-    background-color: rgba(173, 162, 147, 0.424);
+    margin: 50px auto 0px auto;
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 20px;
 }
 
 .environemental-score-txt {
-    font-size: 13px;
+    font-size: 18px;
     font-weight: bold;
 }
 
 .environemental-score-txt-score {
-    font-size: 30px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.environemental-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    &-dqr {
+        background-color: #7fedab;
+        width: 100px;
+        height: 40px;
+        border-radius: 20px;
+        p {
+            margin-top: 6px;
+        }
+    }
+
+    &-pop-modal {
+        color: black;
+        position: relative;
+        top: 10px;
+        font-size: 22px;
+    }
+    &-pop-modal:hover {
+        cursor: pointer;
+        font-size: 24px;
+        right: -1px;
+    }
+    
+}
+
+.modal-body {
+    font-family: "Varela", sans-serif;
 }

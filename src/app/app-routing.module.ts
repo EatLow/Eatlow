@@ -27,7 +27,10 @@ const routes: Routes = [
 				.then(m => m.LoginModule)
 	},
 	{
-		path: 'aliment', component: PageIngredientComponent
+		path: 'aliment',
+		loadChildren: () =>
+			import('./pages/page-ingredient/page-ingredient.module')
+				.then(m => m.PageIngredientModule)
 	},
 ];
 
