@@ -4,6 +4,7 @@ import { SubTitleComponent } from 'src/app/shared/components/sub-title/sub-title
 
 import { ConnectionButtonComponent } from './connection-button/connection-button.component';
 import { TitleComponent } from './title/title.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
 
@@ -11,7 +12,8 @@ import { TitleComponent } from './title/title.component';
   declarations: [
     TitleComponent,
     SubTitleComponent,
-    ConnectionButtonComponent
+    ConnectionButtonComponent,
+    SearchBarComponent
   ],
   imports: [
     CommonModule
@@ -19,7 +21,8 @@ import { TitleComponent } from './title/title.component';
   exports: [
     TitleComponent,
     SubTitleComponent,
-    ConnectionButtonComponent
+    ConnectionButtonComponent,
+    SearchBarComponent
   ]
 })
 export class SharedComponentsModule { }
