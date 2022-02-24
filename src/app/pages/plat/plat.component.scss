@@ -48,7 +48,8 @@ button {
   animation-fill-mode: both;
 
   &.active {
-     display: block;
+     display: flex;
+     flex-direction: column;
     animation: appartion 0.8s ease-out;
     animation-fill-mode: both;
   }
@@ -64,3 +65,4 @@ button {
     transform: translateY(0px);
   }
 }
+

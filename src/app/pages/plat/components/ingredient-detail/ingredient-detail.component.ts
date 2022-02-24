@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IngredientDetailComponent implements OnInit {
 
+  ecoscore = 0.11;
+  title = "test"; 
+
   constructor() { }
 
   ngOnInit(): void {
