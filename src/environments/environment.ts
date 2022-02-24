@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlApi: 'https://9378-2a01-e0a-1bf-3070-40a6-6b73-e30f-662a.ngrok.io'
+  urlApi: "https://5e3f-2a01-e0a-1bf-3070-50b4-7916-d27e-fea4.ngrok.io"
 };
 
 /*
