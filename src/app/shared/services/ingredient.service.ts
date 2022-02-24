@@ -9,7 +9,7 @@ import { Ingredient, IIngredient } from '../models/ingredient/ingredient';
 })
 export class IngredientService implements OnInit {
 
-  private urlApiIngredients = environment.urlApi + '/api/ingredients';
+  private urlApiIngredients = environment.urlApi + '/api/public/ingredients';
 
   ingredients$ = new BehaviorSubject<IIngredient[]>([]);
   ingredientsByName$ = new BehaviorSubject<Ingredient[]>([]);
@@ -21,7 +21,7 @@ export class IngredientService implements OnInit {
   }
 
   getAllIngredients() {
-    this.http.get<IIngredient[]>(`${this.urlApiIngredients}/all`).subscribe((ingredients: IIngredient[]) => {
+    this.http.get<IIngredient[]>(`${this.urlApiIngredients}`).subscribe((ingredients: IIngredient[]) => {
       this.ingredients$.next(ingredients);
     })
   }
@@ -41,5 +41,10 @@ export class IngredientService implements OnInit {
     });
   }
 
-
+  getIngredientsFromMeal(id: number) {
+    this.http.get<Ingredient[]>(`${this.urlApiIngredients}/ByMeal/${id}`).subscribe((ingredients: IIngredient[]) => {
+      const ingredientsInstance = ingredients.map((i) => new Ingredient(i.id, i.name, i.dqr, i.subGroup, i.energyCost));
+      this.ingredientsByName$.next(ingredientsInstance);
+    });
+  }
 }
