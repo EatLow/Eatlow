@@ -3,19 +3,10 @@
 		<img src="../../../assets/WIP.png" alt="Image de plat par défault">
 		<span>Le nom de mon plat !</span>
 	</div>
-	<div class="canvas">
+	<app-chart-doughnut [energyCost]="energyCost"></app-chart-doughnut>
 
-	</div>
-
-	<button class="btn btn-light my-4">VOIR LE DÉTAIL</button>
+	<button class="btn btn-light my-4" (click)="this.isdetails = !this.isdetails">VOIR LE DÉTAIL</button>
+	<div class="ingredients-container" [ngClass]=" {'active': this.isdetails}">
+		<app-ingredient-detail *ngFor="let ingredient of this.plat.ingredients"></app-ingredient-detail>
 	
-	<div class="alternative">
-		<span>Alternatives</span>
-		<div class="alternative-container">
-			<div>
-				<!-- ngFor -->
-	
-			</div>
-		</div>
 	</div>
-</div>

@@ -32,7 +32,7 @@ export class MealService {
   }
 
   getMealsByName(name: string) {
-    this.http.get<Meal[]>(`${this.urlApiMeals}/search/${name}`).subscribe((meals: IMeal[]) => {
+    this.http.get<Meal[]>(`${this.urlApiMeals}/search/${name}`).subscribe((meals: Meal[]) => {
       // const mealInsctance = meals.map((m) => new Meal(m.id, m.name, m.subGroupMeal, m.ingredients, m.otherStepCost));
       this.selectedMeals$.next(meals);
             //TODO se poser la question: On a besoin d'envoyer des instances de Meal ou simplement l'object avec la bonne Interface?
@@ -40,7 +40,7 @@ export class MealService {
   }
 
   getMealByIngredient(id: number) {
-    this.http.get<Meal[]>(`${this.urlApiMeals}/ByIngredient/${id}`).subscribe((meals: IMeal[]) => {
+    this.http.get<Meal[]>(`${this.urlApiMeals}/ByIngredient/${id}`).subscribe((meals: Meal[]) => {
       this.selectedMeals$.next(meals);
     });
   }
