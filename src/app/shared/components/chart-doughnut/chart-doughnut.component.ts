@@ -4,11 +4,11 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { EnergyCost } from '../../models/energyCost/energy-cost';
 
 enum Colors {
-  RED = "hsla(0, 70%, 50%, 1)",
-  ORANGE = "hsla(30, 70%, 50%, 1)",
-  YELLOW = "hsla(60, 70%, 50%, 1)",
-  SOFTGREEN = "hsla(90, 70%, 50%, 1)",
-  GREEN = "hsla(120, 70%, 50%, 1)",
+  RED = "hsla(0, 75%, 71%, 1)",
+  ORANGE = "hsla(30, 75%, 71%, 1)",
+  YELLOW = "hsla(50, 75%, 71%, 1)",
+  SOFTGREEN = "hsla(75, 75%, 71%, 1)",
+  GREEN = "hsla(144, 75%, 71%, 1)",
 }
 @Component({
   selector: 'app-chart-doughnut',
@@ -38,6 +38,7 @@ export class ChartDoughnutComponent implements OnInit {
         labels: this.splitedObject()[0],
       },
       options: {
+        maintainAspectRatio: false,
         plugins: {
           legend: {
             labels: {

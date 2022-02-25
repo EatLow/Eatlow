@@ -1,7 +1,10 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IIngredient, Ingredient } from 'src/app/shared/models/ingredient/ingredient';
+import { finalize } from 'rxjs';
+import { Ingredient } from 'src/app/shared/models/ingredient/ingredient';
 import { IngredientService } from 'src/app/shared/services/ingredient.service';
+import { NumberParse } from 'src/app/shared/services/NumberParse';
 
 @Component({
   selector: 'app-page-ingredient',
@@ -9,10 +12,12 @@ import { IngredientService } from 'src/app/shared/services/ingredient.service';
   styleUrls: ['./page-ingredient.component.scss']
 })
 export class PageIngredientComponent implements OnInit {
-  ingredient!:Ingredient;
+  public isLoading:boolean = true;
+  public isError:boolean = false;
+  public ingredient!:Ingredient;
   
   constructor(private router :ActivatedRoute, private _ingredientservice :IngredientService) { }
-  setColor() :string {
+  public setColor() :string {
     let color: string = '';
     if (this.ingredient.ecoScore > 0 && this.ingredient.ecoScore <= 1) color = "green";
     else if (this.ingredient.ecoScore > 1 && this.ingredient.ecoScore <= 2) color = "softgreen";
@@ -21,12 +26,23 @@ export class PageIngredientComponent implements OnInit {
     else color = "red";
     return color;
   }
+  
   ngOnInit(): void {
     const id = this.router.snapshot.params["id"];
-    // const ingredientsInstance = ingredient.map((i) => new Ingredient(i.id, i.name, i.dqr, i.subGroup, i.energyCost));
-    this._ingredientservice.getOneIngredient(parseInt(id, 10)).subscribe((i) => {
-      this.ingredient = new Ingredient(i.id, i.name, i.dqr, i.subGroup, i.energyCost);
-    });
+      this._ingredientservice.getOneIngredient(parseInt(id, 10)).pipe(finalize(() => this.isLoading = false)).subscribe({
+        next: (i) => {
+          this.ingredient = new Ingredient(i.id, i.name, i.dqr, i.subGroup, i.energyCost);
+        }, 
+        error: (error:HttpErrorResponse) => {
+          console.error(error);
+          this.isError = true;
+        }
+      }
+      );
   }
 
+  public shortenedNumber(x:number):number {
+    return NumberParse.shortenedNumber(x);
+  }
+  
 }

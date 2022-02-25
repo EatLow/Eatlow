@@ -34,7 +34,7 @@ $GREEN: hsla(144, 75%, 71%, 1);
     font-family: "Varela", sans-serif;
     h2 {
         color: #fff;
-        font-size: 40px; 
+        font-size: 40px;
     }
 }
 
@@ -88,4 +88,23 @@ $GREEN: hsla(144, 75%, 71%, 1);
 
 .modal-body {
     font-family: "Varela", sans-serif;
+}
+
+.container-spinner {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.doughnut-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.doughnut {
+    background-color: #fff;
+    border-radius: 30px;
 }

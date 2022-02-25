@@ -1,4 +1,9 @@
 .doughnut {
-    max-width: 600px;
-    min-width: 320px;
+    width: 280px;
+    height: 300px;
+    padding-bottom: 30px;
+    @media screen and (min-width: 576px) {
+        width: 480px;
+        height: 480px;
+    }
 }
