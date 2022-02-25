@@ -1,4 +1,3 @@
-
 <nav role="navigation">
   <div id="menuToggle">
 
@@ -9,15 +8,21 @@
     <span></span>
 
     <ul id="menu">
-      <a href="#"><li>Accueil</li></a>
-      <a href="#"><li>Rechercher</li></a>
-      <a href="#"><li>Recettes</li></a>
-      <a href="#"><li>Plats consommés</li></a>
+      <a href="#">
+        <li>Accueil</li>
+      </a>
+      <a href="#">
+        <li>Rechercher</li>
+      </a>
+      <a href="#">
+        <li>Recettes</li>
+      </a>
+      <a href="#">
+        <li>Plats consommés</li>
+      </a>
       <div></div>
-      <a href="#"><button type="button" class="btn btn-lg " disabled>Deconnexion</button></a>
+      <button *ngIf="isAuth" (click)="logout()" type="button" class="btn btn-lg">Deconnexion</button>
     </ul>
-
-
   </div>
 
 </nav>

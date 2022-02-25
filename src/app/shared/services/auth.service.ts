@@ -85,7 +85,7 @@ export class AuthService implements OnInit
             resolve(false);
           }
         });
-    })
+    });
   }
 
   logout()

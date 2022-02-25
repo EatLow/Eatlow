@@ -2,8 +2,40 @@ $menu-primary-color: #304F42;
 $menu-secondary-color: #446054;
 
 // energy Score colors
-$energyScoreRED: hsla(0, 75%, 71%, 1);
-$energyScoreORANGE: hsla(30, 75%, 71%, 1);
-$energyScoreYELLOW: hsla(50, 75%, 71%, 1);
-$energyScoreSOFTGREEN: hsla(75, 75%, 71%, 1);
-$energyScoreGREEN: hsla(144, 75%, 71%, 1);
+$energyScoreRED: hsla(0, 75%, 71%, 1);			//ES > 4
+$energyScoreORANGE: hsla(30, 75%, 71%, 1);		//ES < 4
+$energyScoreYELLOW: hsla(50, 75%, 71%, 1);		//ES < 3
+$energyScoreSOFTGREEN: hsla(75, 75%, 71%, 1);	//ES < 2
+$energyScoreGREEN: hsla(144, 75%, 71%, 1);     //ES < 1
+
+
+.energy-score-red {
+	color : $energyScoreRED;
+	background-color: $energyScoreRED;
+	text-shadow: 1px 1px 2px darken($energyScoreRED, 55%);
+
+}
+
+.energy-score-orange {
+	color : $energyScoreORANGE;
+	background-color: $energyScoreORANGE;
+	text-shadow: 1px 1px 2px darken($energyScoreORANGE, 55%);
+}
+
+.energy-score-yellow {
+	color : $energyScoreYELLOW;
+	background-color: $energyScoreYELLOW;
+	text-shadow: 1px 1px 2px darken($energyScoreYELLOW, 55%);
+}
+
+.energy-score-softgreen {
+	color : $energyScoreSOFTGREEN;
+	background-color: $energyScoreSOFTGREEN;
+	text-shadow: 1px 1px 2px darken($energyScoreSOFTGREEN, 55%);
+}
+
+.energy-score-green {
+	color : $energyScoreGREEN;
+	background-color: $energyScoreGREEN;
+	text-shadow: 1px 1px 2px darken($energyScoreGREEN, 55%);
+}

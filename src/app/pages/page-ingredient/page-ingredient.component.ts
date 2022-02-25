@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { finalize } from 'rxjs';
 import { Ingredient } from 'src/app/shared/models/ingredient/ingredient';
 import { IngredientService } from 'src/app/shared/services/ingredient.service';
-import { NumberParse } from 'src/app/shared/services/NumberParse';
+import { NumberParse } from 'src/app/shared/services/numberParse';
 
 @Component({
   selector: 'app-page-ingredient',
@@ -29,7 +29,7 @@ export class PageIngredientComponent implements OnInit {
   
   ngOnInit(): void {
     const id = this.router.snapshot.params["id"];
-      this._ingredientservice.getOneIngredient(parseInt(id, 10)).pipe(finalize(() => this.isLoading = false)).subscribe({
+      this._ingredientservice.getOneIngredient(id).pipe(finalize(() => this.isLoading = false)).subscribe({
         next: (i) => {
           this.ingredient = new Ingredient(i.id, i.name, i.dqr, i.subGroup, i.energyCost);
         }, 

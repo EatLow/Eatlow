@@ -1,0 +1,68 @@
+.plat-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .image-container {
+    margin-top: 25px;
+    margin-bottom: 24px;
+    border-radius: 20px;
+    max-width: 300px;
+    background-color: #ffffffaa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 190px;
+    img {
+      width: 100%;
+      height: 100%;
+      max-width: 150px;
+      max-height: 150px;
+      object-fit: contain;
+    }
+    span {
+      margin: 0 15px 15px 15px;
+    }
+  }
+}
+
+.doughnut { 
+  background-color: #ffffffaa;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 5px 0px;
+}
+
+button {
+  width: 200px;
+  font-weight: 600;
+  padding: 8px 25px;
+  margin-bottom: 30px !important;
+}
+
+.ingredients-container {
+  display: none;
+  animation: appartion 0.8s ease-out;
+  animation-direction: reverse;
+  animation-fill-mode: both;
+
+  &.active {
+     display: flex;
+     flex-direction: column;
+    animation: appartion 0.8s ease-out;
+    animation-fill-mode: both;
+  }
+}
+
+@keyframes appartion {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+

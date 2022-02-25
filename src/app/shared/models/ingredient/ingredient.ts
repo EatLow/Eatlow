@@ -16,9 +16,9 @@ export class Ingredient implements IIngredient {
         public name: string,
         public dqr: number,
         public subGroup: ISubGroup,
-        energyCost: IEnergyCost) {
+        energyCost: IEnergyCost
+    ) {
         this.energyCost = new EnergyCost(
-            energyCost.id,
             energyCost.agriculture,
             energyCost.transformation,
             energyCost.packaging,
