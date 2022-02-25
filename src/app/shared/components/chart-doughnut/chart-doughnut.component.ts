@@ -128,7 +128,7 @@ export class ChartDoughnutComponent implements OnInit {
       vals.push(this.energyCost['transport']);
     }
     if (this.energyCost['supermarket']) {
-      colors.push('#fcc096');
+      colors.push('#f4becb');
       names.push('🏪 Supermarché');
       vals.push(this.energyCost['supermarket']);
     }

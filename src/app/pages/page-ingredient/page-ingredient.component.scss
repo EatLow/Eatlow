@@ -1,27 +1,32 @@
-$RED: hsla(0, 70%, 50%, 1);
-$ORANGE: hsla(30, 70%, 50%, 1);
-$YELLOW: hsla(60, 70%, 50%, 1);
-$SOFTGREEN: hsla(90, 70%, 50%, 1);
-$GREEN: hsla(120, 70%, 50%, 1);
+$RED: hsla(0, 75%, 71%, 1);
+$ORANGE: hsla(30, 75%, 71%, 1);
+$YELLOW: hsla(50, 75%, 71%, 1);
+$SOFTGREEN: hsla(75, 75%, 71%, 1);
+$GREEN: hsla(144, 75%, 71%, 1);
 
 .red {
     color : $RED;
+    background-color: $GREEN;
 }
 
 .orange {
     color : $ORANGE;
+    background-color: $GREEN;
 }
 
 .yellow {
     color : $YELLOW;
+    background-color: $GREEN;
 }
 
 .softgreen {
     color : $SOFTGREEN;
+    background-color: $GREEN;
 }
 
 .green {
     color : $GREEN;
+    background-color: $GREEN;
 }
 
 .wrapper-aliment {
@@ -48,8 +53,9 @@ $GREEN: hsla(120, 70%, 50%, 1);
 }
 
 .environemental-score-txt-score {
-    font-size: 40px;
+    font-size: 45px;
     font-weight: bold;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .environemental-footer {
@@ -57,7 +63,7 @@ $GREEN: hsla(120, 70%, 50%, 1);
     justify-content: space-between;
     font-size: 18px;
     &-dqr {
-        background-color: #7fedab;
+        color: #000;
         width: 100px;
         height: 40px;
         border-radius: 20px;
@@ -67,7 +73,7 @@ $GREEN: hsla(120, 70%, 50%, 1);
     }
 
     &-pop-modal {
-        color: black;
+        color: #000;
         position: relative;
         top: 10px;
         font-size: 22px;

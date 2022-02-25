@@ -3,12 +3,12 @@
   <div class="environemental-score text-center">
     <p class="environemental-score-txt">Score environemental</p>
     <p [ngClass]="'environemental-score-txt-score ' + setColor()">
-      {{ score }}
+      {{ this.ingredient.ecoScore }}
     </p>
     <p class="environemental-score-txt">par kg de produit</p>
     <div class="environemental-footer">
-      <div class="environemental-footer-dqr">
-        <p>DQR {{ dqr }}</p>
+      <div [ngClass]="'environemental-footer-dqr ' + setColor()">
+        <p>DQR {{ this.ingredient.dqr }}</p>
       </div>
       <i class="environemental-footer-pop-modal fa-solid fa-circle-info" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
     </div>
@@ -36,4 +36,4 @@
   </div>
 </div>
 
-<app-chart-doughnut></app-chart-doughnut>
+<app-chart-doughnut [energyCost]="ingredient.energyCost"></app-chart-doughnut>
