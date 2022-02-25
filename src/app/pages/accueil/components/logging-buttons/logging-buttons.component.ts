@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../../../shared/services/auth.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: 'accueil-logging-buttons',
+  templateUrl: './logging-buttons.component.html',
+  styleUrls: ['./logging-buttons.component.scss']
 })
-export class HeaderComponent implements OnInit
+export class LoggingButtonsComponent implements OnInit
 {
   public isAuth: boolean = false;
 
@@ -21,10 +21,4 @@ export class HeaderComponent implements OnInit
     })
   }
 
-  logout(): void
-  {
-    this._authService.logout();
-  }
-
 }
-

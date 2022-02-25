@@ -1,0 +1,34 @@
+.btn1 {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 1);
+  color: black;
+  text-align: center;
+  font-size: clamp(0px, 5vw , 80px);
+}
+
+.btn2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 1);
+  color: white;
+  text-align: center;
+  font-size: clamp(0px, 5vw , 80px);
+}
+
+.mother {
+  max-width: 800px;
+  width: 90%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: clamp(0px, 2%, 80px);
+  padding-bottom: clamp(0px, 2%, 80px);
+}
+
+.col {
+  height: 50%;
+}
