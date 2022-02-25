@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { ReplaySubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
+import { TokenService } from './token.service';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +22,7 @@ export class AuthService implements OnInit
 
   isAuth$ = new ReplaySubject<boolean>();
 
-  constructor(private http: HttpClient, private router: Router)
+  constructor(private http: HttpClient, private router: Router, private _tokenService: TokenService)
   {
     this.isConnected();
   }
@@ -35,7 +37,7 @@ export class AuthService implements OnInit
   isConnected(): void
   {
 
-    const token = sessionStorage.getItem('token');
+    const token = this._tokenService.getToken();
     if (token == null)
     {
       this.isAuth$.next(false);
@@ -54,7 +56,7 @@ export class AuthService implements OnInit
         error: () =>
         {
           this.isAuth$.next(false);
-          sessionStorage.removeItem('token');
+          this._tokenService.removeToken();
         }
       });
   }
@@ -74,9 +76,9 @@ export class AuthService implements OnInit
           next: (response: any) =>
           {
             const token = response.token;
-            sessionStorage.setItem('token', token);
+            this._tokenService.setToken(token);
             this.isAuth$.next(true);
-            this.router.navigate(['/']); //TODO vérifier la route 
+            this.router.navigate(['/']);
             resolve(true);
           },
           error: () =>
@@ -90,7 +92,7 @@ export class AuthService implements OnInit
 
   logout()
   {
-    sessionStorage.removeItem('token');
+    this._tokenService.removeToken();
     this.isAuth$.next(false);
   }
 
