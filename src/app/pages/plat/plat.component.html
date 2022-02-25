@@ -1,12 +1,17 @@
+<app-title></app-title>
 <div class="plat-container">
 	<div class="image-container">
 		<img src="../../../assets/WIP.png" alt="Image de plat par défault">
-		<span>Le nom de mon plat !</span>
+		<span *ngIf="meal">{{meal.name}}</span>
 	</div>
-	<app-chart-doughnut [energyCost]="energyCost"></app-chart-doughnut>
-
+	<div class="doughnut">
+		<app-chart-doughnut *ngIf="meal" [energyCost]="meal.energyCost"></app-chart-doughnut>
+	</div>
 	<button class="btn btn-light my-4" (click)="this.isdetails = !this.isdetails">VOIR LE DÉTAIL</button>
 	<div class="ingredients-container" [ngClass]=" {'active': this.isdetails}">
-		<app-ingredient-detail *ngFor="let ingredient of this.plat.ingredients"></app-ingredient-detail>
-	
-	</div>
+		<div *ngIf="meal">
+			<app-ingredient-detail *ngFor="let ingredient of this.meal.ingredients" [ingredient]="ingredient">
+			</app-ingredient-detail>
+		</div>
+		</div>
+		</div>

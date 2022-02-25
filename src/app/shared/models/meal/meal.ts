@@ -1,5 +1,5 @@
 import { EnergyCost, IEnergyCost } from '../energyCost/energy-cost';
-import { IIngredient } from '../ingredient/ingredient';
+import { IIngredient, Ingredient } from '../ingredient/ingredient';
 import { ISubGroup } from '../subGroup/sub-group';
 
 export interface IMeal {
@@ -15,18 +15,22 @@ export class Meal implements IMeal {
         public id: number,
         public name: string,
         public subGroupMeal: ISubGroup,
-        public ingredients: IIngredient[],
-        public otherStepCost: number) { }
+        public ingredients: Ingredient[],
+        public otherStepCost: number) {
+        this.ingredients = ingredients.map((ingredient: IIngredient) => {
+            return new Ingredient(ingredient.id, ingredient.name, ingredient.dqr, ingredient.subGroup, ingredient.energyCost);
+        })
+    }
 
     get energyCost(): EnergyCost {
         return new EnergyCost(this.totalStep('agriculture'), this.totalStep('transformation'), this.totalStep('packaging'), this.totalStep('transport'), this.totalStep('supermarket'), this.totalStep('consomation'));
     }
 
     private totalStep(step: keyof IEnergyCost): number {
-        const acc: IIngredient = this.ingredients.reduce((acc: IIngredient, curr: IIngredient) => {
-            acc.energyCost[step] += curr.energyCost[step]!;
-            return acc;
+        let total: number = 0;
+        this.ingredients.forEach((ingredient: Ingredient) => {
+            total += ingredient.energyCost[step]!;
         });
-        return acc.energyCost[step]! / this.ingredients.length;
+        return total / this.ingredients.length;
     }
 }

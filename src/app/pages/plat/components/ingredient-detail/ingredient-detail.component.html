@@ -1,8 +1,10 @@
-<div class="ingredient-container">
-	<span class="ingredient-title">{{title}}</span>
+<div class="ingredient-container" [routerLink]="['/aliment/{{id}}']">
+	<span class="ingredient-title">{{ingredient.name}}</span>
 	<div></div>
 	<div class="ingredient-ecoscore">
 		<span>ES: </span>
-		<span>{{ecoscore}}</span>
+		<span
+			[ngClass]="{'energy-score-red': ecoScore > 4,'energy-score-orange': ecoScore > 3 && ecoScore < 4, 'energy-score-yellow': ecoScore > 2 && ecoScore < 3,'energy-score-softgreen': ecoScore > 1 && ecoScore < 2,'energy-score-green':  ecoScore < 1}"
+			class="ecoscore">{{ecoScore}}</span>
 	</div>
 </div>

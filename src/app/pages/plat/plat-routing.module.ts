@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PlatComponent } from './plat.component';
 
 const routes: Routes = [
-  { path: '', component: PlatComponent }
+  { path: ':id', component: PlatComponent }
 ];
 
 @NgModule({
