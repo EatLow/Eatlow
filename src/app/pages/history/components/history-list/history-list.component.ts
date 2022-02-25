@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { IConsumable } from '../../../../shared/models/consumable/IConsumable';
 
 @Component({
   selector: 'app-history-list',
@@ -7,9 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryListComponent implements OnInit
 {
-
-
-  public consomations: any[] = [""];
+  @Input()
+  public consomations!: IConsumable[];
 
   constructor() { }
 
