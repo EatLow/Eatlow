@@ -29,6 +29,6 @@ export class Ingredient implements IIngredient {
     }
 
     get ecoScore(): number {
-        return this.energyCost.agriculture + this.energyCost.transformation + this.energyCost.supermarket + this.energyCost.packaging + this.energyCost.transport + this.energyCost.consomation
-    };
+        return this.energyCost.agriculture + this.energyCost.transformation + this.energyCost.supermarket + this.energyCost.packaging + this.energyCost.transport + this.energyCost.consomation;
+    }
 }
