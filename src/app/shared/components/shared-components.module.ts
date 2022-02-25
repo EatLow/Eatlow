@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { SubTitleComponent } from 'src/app/shared/components/sub-title/sub-title.component';
+import { ChartDoughnutComponent } from './chart-doughnut/chart-doughnut.component';
 
 import { ConnectionButtonComponent } from './connection-button/connection-button.component';
 import { TitleComponent } from './title/title.component';
@@ -11,7 +12,8 @@ import { TitleComponent } from './title/title.component';
   declarations: [
     TitleComponent,
     SubTitleComponent,
-    ConnectionButtonComponent
+    ConnectionButtonComponent,
+    ChartDoughnutComponent
   ],
   imports: [
     CommonModule
@@ -19,7 +21,8 @@ import { TitleComponent } from './title/title.component';
   exports: [
     TitleComponent,
     SubTitleComponent,
-    ConnectionButtonComponent
+    ConnectionButtonComponent,
+    ChartDoughnutComponent
   ]
 })
 export class SharedComponentsModule { }
