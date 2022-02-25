@@ -17,6 +17,7 @@ enum Colors {
 })
 export class ChartDoughnutComponent implements OnInit {
   @Input() energyCost!:EnergyCost;
+  @Input() otherStepCost?: number;
 
   ngOnInit(): void {
     Chart.register(...registerables);

@@ -5,7 +5,8 @@
 		<span *ngIf="meal">{{meal.name}}</span>
 	</div>
 	<div class="doughnut">
-		<app-chart-doughnut *ngIf="meal" [energyCost]="meal.energyCost"></app-chart-doughnut>
+		<app-chart-doughnut *ngIf="meal" [energyCost]="meal.energyCost" [otherStepCost]="meal.otherStepCost">
+		</app-chart-doughnut>
 	</div>
 	<button class="btn btn-light my-4" (click)="this.isdetails = !this.isdetails">VOIR LE DÉTAIL</button>
 	<div class="ingredients-container" [ngClass]=" {'active': this.isdetails}">
