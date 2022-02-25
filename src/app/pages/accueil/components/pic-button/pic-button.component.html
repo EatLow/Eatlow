@@ -1,5 +1,5 @@
 <!-- <button class="btn btn-outline-primary pic"></button> -->
-<a href="">
+<div [ngClass]="disabled?'btn btn-secondary btn-lg disabled':'btn btn-secondary btn-lg' ">
   <img class="pic" [src]="urlPic" alt="research">
-</a>
-<h1 class="name">{{title}}</h1>
+  <h1 class="name">{{title}}</h1>
+</div>

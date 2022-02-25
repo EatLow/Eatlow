@@ -1,3 +1,4 @@
+import { IConsumable } from '../consumable/IConsumable';
 import { IEnergyCost } from '../energyCost/energy-cost';
 import { ISubGroup } from '../subGroup/sub-group';
 
@@ -10,7 +11,7 @@ export interface IIngredient
     energyCost: IEnergyCost;
 }
 
-export class Ingredient implements IIngredient
+export class Ingredient implements IIngredient, IConsumable
 {
     constructor(
         public id: number,
@@ -19,7 +20,13 @@ export class Ingredient implements IIngredient
         public subGroup: ISubGroup,
         public energyCost: IEnergyCost) { }
 
-    get ecoScore(): number {
+    get subGroupName(): string
+    {
+        return this.subGroup.name;
+    }
+
+    get ecoScore(): number
+    {
         return this.energyCost.agriculture + this.energyCost.transformation + this.energyCost.supermarket + this.energyCost.packaging + this.energyCost.transport + this.energyCost.consomation
     };
 }

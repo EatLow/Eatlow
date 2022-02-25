@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { SubTitleComponent } from 'src/app/shared/components/sub-title/sub-title.component';
 
 import { ConnectionButtonComponent } from './connection-button/connection-button.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 import { TitleComponent } from './title/title.component';
 
 
@@ -11,7 +12,8 @@ import { TitleComponent } from './title/title.component';
   declarations: [
     TitleComponent,
     SubTitleComponent,
-    ConnectionButtonComponent
+    ConnectionButtonComponent,
+    SearchBarComponent
   ],
   imports: [
     CommonModule
@@ -19,7 +21,8 @@ import { TitleComponent } from './title/title.component';
   exports: [
     TitleComponent,
     SubTitleComponent,
-    ConnectionButtonComponent
+    ConnectionButtonComponent,
+    SearchBarComponent
   ]
 })
 export class SharedComponentsModule { }
