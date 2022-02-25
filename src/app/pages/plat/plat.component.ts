@@ -20,7 +20,6 @@ export class PlatComponent implements OnInit {
   constructor(private _route: ActivatedRoute, private _mealService: MealService) {
     this._route.params.subscribe(params => {    //simple récup params we can do a .map on params
       this.id = params['id'];
-      console.log('this.id is :', this.id);
       this._mealService.getOneMeal(this.id).subscribe((meal: IMeal) => {
         this.meal = new Meal(meal.id, meal.name, meal.subGroupMeal, meal.ingredients.map((i) => new Ingredient(i.id, i.name, i.dqr, i.subGroup, i.energyCost)), meal.otherStepCost);
       })
