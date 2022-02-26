@@ -13,6 +13,6 @@ export class EnergyCostFactory
 
   getEnergyCost(eneryCost: IEnergyCost): EnergyCost
   {
-    return new EnergyCost(eneryCost.id, eneryCost.agriculture, eneryCost.transformation, eneryCost.packaging, eneryCost.transformation, eneryCost.supermarket, eneryCost.consomation)
+    return new EnergyCost(eneryCost.id!, eneryCost.agriculture, eneryCost.transformation, eneryCost.packaging, eneryCost.transformation, eneryCost.supermarket, eneryCost.consomation)
   }
 }

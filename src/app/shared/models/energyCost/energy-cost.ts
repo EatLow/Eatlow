@@ -1,12 +1,12 @@
 export interface IEnergyCost
 {
-    id: number;
     agriculture: number;
     transformation: number;
     packaging: number;
     transport: number;
     supermarket: number;
     consomation: number;
+    id?: number;
 }
 
 export class EnergyCost implements IEnergyCost
@@ -18,9 +18,11 @@ export class EnergyCost implements IEnergyCost
         public packaging: number,
         public transport: number,
         public supermarket: number,
-        public consomation: number) { }
+        public consomation: number
+    ) { }
 
-        get ecoScore(): number {
-            return this.agriculture + this.transformation + this.supermarket + this.packaging + this.transport + this.consomation;
-        };
+    public get ecoScore(): number
+    {
+        return this.agriculture + this.transformation + this.supermarket + this.packaging + this.transport + this.consomation;
+    };
 }

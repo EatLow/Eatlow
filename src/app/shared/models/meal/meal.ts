@@ -1,4 +1,5 @@
 import { IConsumable } from '../consumable/IConsumable';
+import { EnergyCost, IEnergyCost } from '../energyCost/energy-cost';
 import { IIngredient, Ingredient } from '../ingredient/ingredient';
 import { ISubGroup } from '../subGroup/sub-group';
 
@@ -28,12 +29,24 @@ export class Meal implements IMeal, IConsumable
     get ecoScore(): number
     {
         let ecoScore: number = 0;
-        if (this.ingredients.length == 0) return ecoScore;
         this.ingredients.forEach((ingredient) =>
         {
             ecoScore += ingredient.ecoScore;
         })
         ecoScore = ecoScore + this.otherStepCost;
         return ecoScore;
+    }
+    get energyCost(): EnergyCost
+    {
+        return new EnergyCost(this.id, this.totalStep('agriculture'), this.totalStep('transformation'), this.totalStep('packaging'), this.totalStep('transport'), this.totalStep('supermarket'), this.totalStep('consomation'));
+    }
+    private totalStep(step: keyof IEnergyCost): number
+    {
+        let total: number = 0;
+        this.ingredients.forEach((ingredient: Ingredient) =>
+        {
+            total += ingredient.energyCost[step]!;
+        });
+        return total / this.ingredients.length;
     }
 }

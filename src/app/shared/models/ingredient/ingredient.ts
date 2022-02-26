@@ -18,7 +18,9 @@ export class Ingredient implements IIngredient, IConsumable
         public name: string,
         public dqr: number,
         public subGroup: ISubGroup,
-        public energyCost: IEnergyCost) { }
+        public energyCost: IEnergyCost
+    )
+    { }
 
     get subGroupName(): string
     {

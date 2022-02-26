@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
-import { IIngredient, Ingredient } from '../models/ingredient/ingredient';
+import { IIngredient } from '../models/ingredient/ingredient';
 
 @Injectable({
   providedIn: 'root'
@@ -13,45 +13,27 @@ export class IngredientService
 
   private urlApiIngredients = environment.urlApi + '/api/public/ingredients';
 
-  ingredients$ = new BehaviorSubject<IIngredient[]>([]);
-  ingredientsByName$ = new BehaviorSubject<Ingredient[]>([]);
-
-  constructor(private http: HttpClient) { }
-
-
-  getAllIngredients()
+  constructor(private http: HttpClient)
   {
-    this.http.get<IIngredient[]>(`${this.urlApiIngredients}`).subscribe((ingredients: IIngredient[]) =>
-    {
-      this.ingredients$.next(ingredients);
-    })
   }
 
-  getOneIngredient(id: number): Ingredient
+  getAllIngredients(): Observable<IIngredient[]>
   {
-    const ingredient = this.ingredients$.value.filter((i) =>
-    {
-      return i.id ? i.id === id : false;
-    })[0];
-    return new Ingredient(ingredient.id, ingredient.name, ingredient.dqr, ingredient.subGroup, ingredient.energyCost);
+    return this.http.get<IIngredient[]>(`${this.urlApiIngredients}`);
   }
 
-  getIngredientsByName(name: string)
+  getOneIngredient(id: string): Observable<IIngredient>
   {
-    this.http.get<Ingredient[]>(`${this.urlApiIngredients}/search/${name}`).subscribe((ingredients: IIngredient[]) =>
-    {
-      const ingredientsInstance = ingredients.map((i) => new Ingredient(i.id, i.name, i.dqr, i.subGroup, i.energyCost));
-      this.ingredientsByName$.next(ingredientsInstance);
-      //TODO se poser la question: On a besoin d'envoyer des instances d'Ingredients ou simplement l'object avec la bonne Interface?
-    });
+    return this.http.get<IIngredient>(`${this.urlApiIngredients}/${id}`);
   }
 
-  getIngredientsFromMeal(id: number)
+  getIngredientsByName(name: string): Observable<IIngredient[]>
   {
-    this.http.get<Ingredient[]>(`${this.urlApiIngredients}/ByMeal/${id}`).subscribe((ingredients: IIngredient[]) =>
-    {
-      const ingredientsInstance = ingredients.map((i) => new Ingredient(i.id, i.name, i.dqr, i.subGroup, i.energyCost));
-      this.ingredientsByName$.next(ingredientsInstance);
-    });
+    return this.http.get<IIngredient[]>(`${this.urlApiIngredients}/search/${name}`);
+  }
+
+  getIngredientsFromMeal(id: string): Observable<IIngredient[]>
+  {
+    return this.http.get<IIngredient[]>(`${this.urlApiIngredients}/ByMeal/${id}`);
   }
 }

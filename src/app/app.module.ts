@@ -11,6 +11,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
   declarations: [
     HeaderComponent,
     AppComponent,
+    HeaderComponent
   ],
   exports: [
   ],
@@ -24,4 +25,3 @@ import { HeaderComponent } from './shared/components/header/header.component';
 })
 
 export class AppModule { }
-

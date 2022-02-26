@@ -1,43 +1,50 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+
 import { EnergyCost } from '../../models/energyCost/energy-cost';
 
-enum Colors {
-  RED = "hsla(0, 100%, 50%, 1)",
-  OREANGE = "hsla(30, 100%, 50%, 1)",
-  YELLOW = "hsla(60, 100%, 50%, 1)",
-  SOFTGREEN = "hsla(90, 100%, 50%, 1)",
-  GREEN = "hsla(120, 100%, 50%, 1)",
+enum Colors
+{
+  RED = "hsla(0, 75%, 71%, 1)",
+  ORANGE = "hsla(30, 75%, 71%, 1)",
+  YELLOW = "hsla(50, 75%, 71%, 1)",
+  SOFTGREEN = "hsla(75, 75%, 71%, 1)",
+  GREEN = "hsla(144, 75%, 71%, 1)",
 }
 @Component({
   selector: 'app-chart-doughnut',
   templateUrl: './chart-doughnut.component.html',
   styleUrls: ['./chart-doughnut.component.scss'],
 })
-export class ChartDoughnutComponent implements OnInit {
-  @Input() energyCost!:EnergyCost;
+export class ChartDoughnutComponent implements OnInit
+{
+  @Input() energyCost!: EnergyCost;
+  @Input() otherStepCost?: number;
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
     Chart.register(...registerables);
     Chart.register(ChartDataLabels);
     this.createDoughnut();
   }
 
-  private createDoughnut() {
+  private createDoughnut()
+  {
     const myChart = new Chart("doughnut", {
       type: 'doughnut',
       data: {
         datasets: [
-        {
-          data: this.splitedObject()[1],
-          backgroundColor: this.splitedObject()[2],
-          borderWidth: 1,
-        },
+          {
+            data: this.splitedObject()[1],
+            backgroundColor: this.splitedObject()[2],
+            borderWidth: 1,
+          },
         ],
         labels: this.splitedObject()[0],
       },
       options: {
+        maintainAspectRatio: false,
         plugins: {
           legend: {
             labels: {
@@ -48,91 +55,102 @@ export class ChartDoughnutComponent implements OnInit {
             }
           },
           datalabels: {
-              formatter: (value) => {
-                  return value + '%';
-              },
-              display: true,
-              backgroundColor: '#fff',
-              borderRadius: 3,
-              font: {
-                  size: 15,
-                  weight: 'bold',
-              },
-              color: '#666666',
+            formatter: (value: any) =>
+            {
+              return value + '%';
+            },
+            display: true,
+            backgroundColor: '#fff',
+            borderRadius: 3,
+            font: {
+              size: 15,
+              weight: 'bold',
+            },
+            color: '#666666',
           },
-      }
+        }
       },
       plugins: [this.centerText()],
     });
   }
 
-  private centerText(): any {
+  private centerText(): any
+  {
     const ecoScore = this.energyCost.ecoScore;
     const color = this.color();
     const size = window.innerWidth >= 425 ? "30px" : "20px";
 
     const centerText = {
       id: 'centerText',
-      afterDatasetsDraw(chart:any, args:any, options:any) {
-          const { ctx, chartArea: { top, right, bottom, left, width, height }} = chart;
-          ctx.save();
-          ctx.font = `bolder ${size} Varela`;
-          ctx.fillStyle = '#4a4a4a';
-          ctx.textAlign = 'center';
-          ctx.fillText('EcoScore:', width / 2, height / 2 + top);
-          ctx.restore();
+      afterDatasetsDraw(chart: any, args: any, options: any)
+      {
+        const { ctx, chartArea: { top, right, bottom, left, width, height } } = chart;
+        ctx.save();
+        ctx.font = `bolder ${size} Varela`;
+        ctx.fillStyle = '#4a4a4a';
+        ctx.textAlign = 'center';
+        ctx.fillText('EcoScore:', width / 2, height / 2 + top);
+        ctx.restore();
 
-          ctx.font = `bolder ${size } Arial`;
-          ctx.fillStyle = color;
-          ctx.textAlign = 'center';
-          ctx.fillText(ecoScore, width / 2, height / 1.7 + top);
-          ctx.restore();
+        ctx.font = `bolder ${size} Arial`;
+        ctx.fillStyle = color;
+        ctx.textAlign = 'center';
+        ctx.fillText(ecoScore, width / 2, height / 1.7 + top);
+        ctx.restore();
       }
-  }
-  return centerText;
+    }
+    return centerText;
   }
 
-  private color(): string {
+  private color(): string
+  {
     let color: string = '';
     if (this.energyCost.ecoScore > 0 && this.energyCost.ecoScore <= 1) color = Colors.GREEN;
     else if (this.energyCost.ecoScore > 1 && this.energyCost.ecoScore <= 2) color = Colors.SOFTGREEN;
     else if (this.energyCost.ecoScore > 2 && this.energyCost.ecoScore <= 3) color = Colors.YELLOW;
-    else if (this.energyCost.ecoScore > 3 && this.energyCost.ecoScore < 4) color = Colors.OREANGE;
+    else if (this.energyCost.ecoScore > 3 && this.energyCost.ecoScore < 4) color = Colors.ORANGE;
     else color = Colors.RED;
     return color;
   }
 
-  private splitedObject(): any {
+  private splitedObject(): any
+  {
     const names = [];
     const vals = [];
     const colors = [];
 
-    if (this.energyCost['agriculture']) {
+    if (this.energyCost['agriculture'])
+    {
       colors.push('#fcc096');
       names.push('🚜 Agriculture');
       vals.push(this.energyCost['agriculture']);
     }
-    if (this.energyCost['transformation']) {
+    if (this.energyCost['transformation'])
+    {
       colors.push('#b2ecf7');
       names.push('🥫 Transformation');
       vals.push(this.energyCost['transformation']);
     }
-    if (this.energyCost['packaging']) {
+    if (this.energyCost['packaging'])
+    {
       colors.push('#cebde1');
       names.push('🧴 Emballage');
       vals.push(this.energyCost['packaging']);
     }
-    if (this.energyCost['transport']) {
+    if (this.energyCost['transport'])
+    {
       colors.push('#bbe7d6');
       names.push('🚚 Transport');
       vals.push(this.energyCost['transport']);
     }
-    if (this.energyCost['supermarket']) {
-      colors.push('#fcc096');
+    if (this.energyCost['supermarket'])
+    {
+      colors.push('#f4becb');
       names.push('🏪 Supermarché');
       vals.push(this.energyCost['supermarket']);
     }
-    if (this.energyCost['consomation']) {
+    if (this.energyCost['consomation'])
+    {
       colors.push('#fcedb6');
       names.push('🍽️ Consommation');
       vals.push(this.energyCost['consomation']);
