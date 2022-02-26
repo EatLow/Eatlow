@@ -1,5 +1,5 @@
 import { IConsumable } from '../consumable/IConsumable';
-import { IEnergyCost } from '../energyCost/energy-cost';
+import { EnergyCost, IEnergyCost } from '../energyCost/energy-cost';
 import { ISubGroup } from '../subGroup/sub-group';
 
 export interface IIngredient
@@ -18,7 +18,7 @@ export class Ingredient implements IIngredient, IConsumable
         public name: string,
         public dqr: number,
         public subGroup: ISubGroup,
-        public energyCost: IEnergyCost
+        public energyCost: EnergyCost
     )
     { }
 
