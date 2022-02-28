@@ -22,4 +22,6 @@ export class SearchIngredientsComponent implements OnInit {
   {
 
   }
+
+
 }

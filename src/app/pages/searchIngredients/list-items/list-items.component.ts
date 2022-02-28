@@ -10,6 +10,7 @@ import { IngredientService } from 'src/app/shared/services/ingredient.service';
 export class ListItemsComponent implements OnInit {
  public ingredients : IIngredient[]=[];
 
+
   constructor(
     private ingredientService : IngredientService) { }
 
