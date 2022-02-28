@@ -23,11 +23,11 @@ export class EnergyCost implements IEnergyCost {
         return this.agriculture + this.transformation + this.supermarket + this.packaging + this.transport + this.consomation;
     };
 
-    public get otherStepCost(): number {
-        return this.otherStepCost ? this.otherStepCost : 0;
-    }
+    // public get otherStepCost(): number {
+    //     return this.otherStepCost ? this.otherStepCost : 0;
+    // }
 
-    set otherStepCost(value: number) {
-        this.otherStepCost = value;
-    }
+    // set otherStepCost(value: number) {
+    //     this.otherStepCost = value;
+    // }
 }
