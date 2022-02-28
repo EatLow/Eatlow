@@ -1,11 +1,11 @@
 <app-title></app-title>
 <div class="plat-container">
-	<div class="image-container">
+	<div class="bg-opaque image-container">
 		<img src="../../../assets/WIP.png" alt="Image de plat par défault">
 		<span *ngIf="meal">{{meal.name}}</span>
 	</div>
-	<div class="doughnut">
-		<app-chart-doughnut *ngIf="meal" [energyCost]="meal.energyCost" [otherStepCost]="meal.otherStepCost">
+	<div class="doughnut bg-opaque">
+		<app-chart-doughnut *ngIf="meal" [energyCost]="energyCost!" [otherStepCost]="meal.otherStepCost">
 		</app-chart-doughnut>
 	</div>
 	<button class="btn btn-light my-4" (click)="this.isdetails = !this.isdetails">VOIR LE DÉTAIL</button>

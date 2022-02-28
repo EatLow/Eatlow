@@ -7,3 +7,7 @@ body {
     background:  center / cover no-repeat url("/assets/images/Une-feuille-de-Ginkgo-Biloba.jpg");
     background-attachment: fixed;
 }
+
+.bg-opaque { 
+    background: rgba(255, 255, 255, 0.85);
+}
