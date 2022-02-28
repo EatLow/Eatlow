@@ -3,13 +3,11 @@
  #menuToggle
  {
    display: block;
-   position: absolute;
+   position: fixed;
    top: 50px;
    left: 50px;
-   z-index: 1;
-   -webkit-user-select: none;
    user-select: none;
-
+   z-index: 99;
   a
     {
       text-decoration: none;
