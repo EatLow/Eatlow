@@ -17,9 +17,10 @@ import { ListItemsComponent } from './list-items/list-items.component';
     CommonModule,
     RouterModule,
     SearchRoutingModule,
-    SharedComponentsModule
+    SharedComponentsModule,
 
 
-  ]
-})
+
+  ]})
+
 export class SearchIngredientsModule { }

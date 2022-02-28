@@ -8,6 +8,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class SearchIngredientsComponent implements OnInit {
 
+  filterTerm!: string;
+
   public searchForm: FormGroup = new FormGroup({
     search: new FormControl('', Validators.required),
   })

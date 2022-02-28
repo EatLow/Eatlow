@@ -6,7 +6,7 @@ import { ConnectionButtonComponent } from './connection-button/connection-button
 import { TitleComponent } from './title/title.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 
-
+ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,9 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     TitleComponent,
     SubTitleComponent,
     ConnectionButtonComponent,
-    SearchBarComponent
+    SearchBarComponent,
+
+Ng2SearchPipeModule
   ]
 })
 export class SharedComponentsModule { }
