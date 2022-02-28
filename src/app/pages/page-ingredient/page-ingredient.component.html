@@ -1,7 +1,7 @@
 <div *ngIf="ingredient">
   <div class="wrapper-aliment">
     <h2 class="text-center">{{ ingredient.name }}</h2>
-    <div class="environemental-score text-center">
+    <div class="environemental-score text-center bg-opaque">
       <p class="environemental-score-txt">Score environemental</p>
       <p [ngClass]="'environemental-score-txt-score ' + setColor()">
         {{ shortenedNumber(ingredient.ecoScore) }}
@@ -37,7 +37,7 @@
     </div>
   </div>
   <div class="doughnut-container">
-      <app-chart-doughnut class="doughnut" [energyCost]="ingredient.energyCost"></app-chart-doughnut>
+      <app-chart-doughnut class="doughnut bg-opaque" [energyCost]="ingredient.energyCost"></app-chart-doughnut>
   </div>
 </div>
 

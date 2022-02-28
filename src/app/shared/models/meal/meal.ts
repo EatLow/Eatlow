@@ -19,7 +19,7 @@ export class Meal implements IMeal {
         public otherStepCost: number) {
         this.ingredients = ingredients.map((ingredient: IIngredient) => {
             return new Ingredient(ingredient.id, ingredient.name, ingredient.dqr, ingredient.subGroup, ingredient.energyCost);
-        })
+        }); //TODO à revoir une fois les factory integré
     }
 
     get energyCost(): EnergyCost {
