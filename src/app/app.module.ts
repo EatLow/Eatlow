@@ -10,8 +10,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 @NgModule({
   declarations: [
     HeaderComponent,
-    AppComponent,
-    HeaderComponent
+    AppComponent
   ],
   exports: [
   ],
