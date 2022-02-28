@@ -4,11 +4,11 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { EnergyCost } from '../../models/energyCost/energy-cost';
 
 enum Colors {
-  RED = "hsla(0, 100%, 50%, 1)",
-  OREANGE = "hsla(30, 100%, 50%, 1)",
-  YELLOW = "hsla(60, 100%, 50%, 1)",
-  SOFTGREEN = "hsla(90, 100%, 50%, 1)",
-  GREEN = "hsla(120, 100%, 50%, 1)",
+  RED = "hsla(0, 75%, 71%, 1)",
+  ORANGE = "hsla(30, 75%, 71%, 1)",
+  YELLOW = "hsla(50, 75%, 71%, 1)",
+  SOFTGREEN = "hsla(75, 75%, 71%, 1)",
+  GREEN = "hsla(144, 75%, 71%, 1)",
 }
 @Component({
   selector: 'app-chart-doughnut',
@@ -17,6 +17,7 @@ enum Colors {
 })
 export class ChartDoughnutComponent implements OnInit {
   @Input() energyCost!:EnergyCost;
+  @Input() otherStepCost?: number;
 
   ngOnInit(): void {
     Chart.register(...registerables);
@@ -38,6 +39,7 @@ export class ChartDoughnutComponent implements OnInit {
         labels: this.splitedObject()[0],
       },
       options: {
+        maintainAspectRatio: false,
         plugins: {
           legend: {
             labels: {
@@ -97,7 +99,7 @@ export class ChartDoughnutComponent implements OnInit {
     if (this.energyCost.ecoScore > 0 && this.energyCost.ecoScore <= 1) color = Colors.GREEN;
     else if (this.energyCost.ecoScore > 1 && this.energyCost.ecoScore <= 2) color = Colors.SOFTGREEN;
     else if (this.energyCost.ecoScore > 2 && this.energyCost.ecoScore <= 3) color = Colors.YELLOW;
-    else if (this.energyCost.ecoScore > 3 && this.energyCost.ecoScore < 4) color = Colors.OREANGE;
+    else if (this.energyCost.ecoScore > 3 && this.energyCost.ecoScore < 4) color = Colors.ORANGE;
     else color = Colors.RED;
     return color;
   }
@@ -128,7 +130,7 @@ export class ChartDoughnutComponent implements OnInit {
       vals.push(this.energyCost['transport']);
     }
     if (this.energyCost['supermarket']) {
-      colors.push('#fcc096');
+      colors.push('#f4becb');
       names.push('🏪 Supermarché');
       vals.push(this.energyCost['supermarket']);
     }

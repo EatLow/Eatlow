@@ -22,7 +22,7 @@ export class MealService {
     return this.http.get<IMeal[]>(`${this.urlApiMeals}`);
   }
 
-  getOneMeal(id: number): Observable<IMeal> {
+  getOneMeal(id: string): Observable<IMeal> {
     return this.http.get<IMeal>(`${this.urlApiMeals}/${id}`);
   }
 
@@ -30,7 +30,7 @@ export class MealService {
     return this.http.get<IMeal[]>(`${this.urlApiMeals}/search/${name}`);
   }
 
-  getMealsByIngredient(id: number): Observable<IMeal[]> {
+  getMealsByIngredient(id: string): Observable<IMeal[]> {
     return this.http.get<IMeal[]>(`${this.urlApiMeals}/ByIngredient/${id}`);
   }
 

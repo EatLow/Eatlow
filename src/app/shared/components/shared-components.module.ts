@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { SubTitleComponent } from 'src/app/shared/components/sub-title/sub-title.component';
+import { ChartDoughnutComponent } from './chart-doughnut/chart-doughnut.component';
 
 import { ConnectionButtonComponent } from './connection-button/connection-button.component';
 import { TitleComponent } from './title/title.component';
@@ -13,7 +14,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     TitleComponent,
     SubTitleComponent,
     ConnectionButtonComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    ChartDoughnutComponent
   ],
   imports: [
     CommonModule
@@ -23,8 +25,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     SubTitleComponent,
     ConnectionButtonComponent,
     SearchBarComponent,
-
-Ng2SearchPipeModule
+Ng2SearchPipeModule,
+    ChartDoughnutComponent
   ]
 })
 export class SharedComponentsModule { }

@@ -18,7 +18,7 @@ export class IngredientService {
     return this.http.get<IIngredient[]>(`${this.urlApiIngredients}`);
   }
 
-  getOneIngredient(id: number): Observable<IIngredient> {
+  getOneIngredient(id: string): Observable<IIngredient> {
     return this.http.get<IIngredient>(`${this.urlApiIngredients}/${id}`);
   }
 
@@ -26,7 +26,7 @@ export class IngredientService {
     return this.http.get<IIngredient[]>(`${this.urlApiIngredients}/search/${name}`);
   }
 
-  getIngredientsFromMeal(id: number): Observable<IIngredient[]> {
+  getIngredientsFromMeal(id: string): Observable<IIngredient[]> {
     return this.http.get<Ingredient[]>(`${this.urlApiIngredients}/ByMeal/${id}`);
   }
 }
