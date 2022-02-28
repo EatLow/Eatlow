@@ -43,3 +43,5 @@ Thumbs.db
 
 # Other
 request.http
+/documentation/*
+documentation/
