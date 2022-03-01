@@ -17,7 +17,11 @@
         <p>Aucun résultats n'a été trouvé.</p>
       </div>
       <div class="vstack gap-3">
-        <div *ngFor="let ingredient of ingredients" class="bg-light border">
+        <div
+          *ngFor="let ingredient of ingredients"
+          class="bg-light border ingredient"
+          routerLink="/aliment/{{ingredient.id}}"
+        >
           {{ingredient.name}}
         </div>
       </div>
