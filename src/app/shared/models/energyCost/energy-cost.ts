@@ -1,4 +1,5 @@
-export interface IEnergyCost {
+export interface IEnergyCost
+{
     agriculture: number;
     transformation: number;
     packaging: number;
@@ -8,18 +9,20 @@ export interface IEnergyCost {
     id?: number;
 }
 
-export class EnergyCost implements IEnergyCost {
+export class EnergyCost implements IEnergyCost
+{
     constructor(
+        public id: number,
         public agriculture: number,
         public transformation: number,
         public packaging: number,
         public transport: number,
         public supermarket: number,
-        public consomation: number,
-        public id?: number,
+        public consomation: number
     ) { }
 
-    get ecoScore(): number {
+    public get ecoScore(): number
+    {
         return this.agriculture + this.transformation + this.supermarket + this.packaging + this.transport + this.consomation;
     };
 }

@@ -1,3 +1,6 @@
+import { IIngredient } from '../ingredient/ingredient';
+import { IMeal } from '../meal/meal';
+
 export interface IUser
 {
     id: number;
@@ -5,6 +8,8 @@ export interface IUser
     firstname: string;
     email: string;
     password: string;
+    historyMeals: IMeal[];
+    historyIngredients: IIngredient[];
 }
 
 export class User implements IUser
@@ -14,6 +19,8 @@ export class User implements IUser
         public lastname: string,
         public firstname: string,
         public email: string,
-        public password: string)
+        public password: string,
+        public historyMeals: IMeal[],
+        public historyIngredients: IIngredient[])
     { }
 }

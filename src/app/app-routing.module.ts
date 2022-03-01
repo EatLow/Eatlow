@@ -1,7 +1,8 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import { IsNotLoggedInGuard } from "./shared/guards/is-not-logged-in.guard";
+import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard';
+import { IsNotLoggedInGuard } from './shared/guards/is-not-logged-in.guard';
 
 const routes: Routes = [
   {
@@ -40,6 +41,13 @@ const routes: Routes = [
         (m) => m.SearchIngredientsModule
       ),
   },
+  {
+		path: 'historique',
+		canActivate: [IsLoggedInGuard],
+		loadChildren: () =>
+			import('./pages/history/history.module')
+				.then(m => m.HistoryModule)
+	},
   { path: "**", redirectTo: "" },
 ];
 

@@ -12,5 +12,10 @@
   border-radius: 15%;
 }
 
-.col {
+.colorize{
+    color: black;
+}
+
+.active:hover{
+  color: hsla(144, 75%, 71%, 1);
 }

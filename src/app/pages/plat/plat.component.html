@@ -7,11 +7,11 @@
 	<div class="doughnut-container">
 		<app-chart-doughnut *ngIf="meal" class="doughnut bg-opaque" [energyCost]="energyCost!" [otherStepCost]="meal.otherStepCost"></app-chart-doughnut>
 	</div>
-	<button class="btn btn-light my-4" (click)="this.isdetails = !this.isdetails">VOIR LE DÉTAIL</button>
-	<div class="ingredients-container" [ngClass]=" {'active': this.isdetails}">
+	<button class="btn btn-light my-4" (click)="this.isDetails = !this.isDetails">VOIR LE DÉTAIL</button>
+	<div class="ingredients-container" [ngClass]=" {'active': this.isDetails}">
 		<div *ngIf="meal">
 			<app-ingredient-detail *ngFor="let ingredient of this.meal.ingredients" [ingredient]="ingredient">
 			</app-ingredient-detail>
 		</div>
-		</div>
-		</div>
+	</div>
+</div>
