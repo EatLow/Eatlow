@@ -1,0 +1,27 @@
+@import "src/colors.scss";
+
+h2 {
+  color: #ffffff;
+  font-size: 21px;
+  line-height: 32px;
+  font-weight: 400;
+}
+
+p {
+  color: #ffffff;
+}
+
+div {
+  padding: 5px 10px;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.ingredient {
+  &:hover,
+  :active {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-out;
+  }
+}

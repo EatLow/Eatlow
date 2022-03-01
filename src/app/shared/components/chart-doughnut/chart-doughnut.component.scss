@@ -1,9 +1,16 @@
+#doughnut {
+    min-width: 320px;
+}
+
 .doughnut {
-    width: 280px;
-    height: 300px;
-    padding-bottom: 30px;
-    @media screen and (min-width: 576px) {
-        width: 480px;
-        height: 480px;
+    padding-bottom: 20px;
+
+    @media screen and (min-width: 425px) {
+        width: 400px;
+        height: 400px;
+    }
+    @media screen and (min-width: 768px) {
+        width: 600px;
+        height: 600px;
     }
 }
