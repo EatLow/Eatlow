@@ -24,10 +24,6 @@ export class AccueilComponent implements OnInit
       this.isAuth = isAuth // true pour tester un token;
     })
   }
-  ngOnDestroy(): void
-  {
-    this._sub.unsubscribe();
-  }
 
 
   mouseEvHandler(hover: boolean)

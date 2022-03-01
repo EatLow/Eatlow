@@ -1,29 +1,6 @@
-button {
-  width: 75%;
-  height: 0;
-  padding-bottom: 70%;
-  margin-top: 15%;
-  margin-bottom: 15%;
-  margin-left: 10%;
-  margin-right: 10%;
-  border-radius: 15px;
-}
-
-.pic {
-  @media screen and (max-width: 1024px) {
-    height: clamp(0px, 25vw, 500px);
-  }
-  height: clamp(0px, 15vh, 500px);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10%;
-  margin-bottom: auto;
-}
-
-h1 {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  font-size: clamp(0px, 3vw, 50px);
+img { 
+  object-fit: contain;
+  width: 120px;
+  height: 120px;
+  margin: 10px 25px;
 }

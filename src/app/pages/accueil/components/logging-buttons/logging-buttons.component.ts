@@ -20,5 +20,4 @@ export class LoggingButtonsComponent implements OnInit
       this.isAuth = isAuth;
     })
   }
-
 }
