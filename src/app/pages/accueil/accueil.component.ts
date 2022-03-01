@@ -23,19 +23,13 @@ export class AccueilComponent implements OnInit
     })
   }
 
-
 mouseEvHandler(hover : boolean){
-  if (this.isAuth ==true)
-  {this.hover = hover;}
-  else
-  {this.hover = true;}
+  this.hover = hover; // On veut qu'il reste actif sans tenir compte du token
 }
  mouseEvHandler2(hover : boolean){
-if(){
   if (this.isAuth ==true)
   this.hover2 = hover;
   else this.hover2 = true;
-}
 }
 mouseEvHandler3(hover : boolean){
   if (this.isAuth ==true)

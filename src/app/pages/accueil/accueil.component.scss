@@ -12,9 +12,10 @@
   border-radius: 15%;
 }
 
-.search{
+.colorize{
     color: black;
-    :hover{
-      color: hsla(144, 75%, 71%, 1);
-    }
+}
+
+.active:hover{
+  color: hsla(144, 75%, 71%, 1);
 }
