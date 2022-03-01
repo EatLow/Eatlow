@@ -104,8 +104,8 @@ export class AuthService implements OnInit
     this.http.post<{ token: string }>(`${this.urlApiAuth}/register`, JSON.stringify({ lastname, firstname, email, password }), { headers: this.headers, withCredentials: true }).subscribe((response: { token: string }) =>
     {
       const token = response.token;
-      sessionStorage.setItem('token', token);
-      this.router.navigate(['/']); //TODO verifier la route 
+      this._tokenService.setToken(token);
+      this.router.navigate(['/']);
     });
   }
 }

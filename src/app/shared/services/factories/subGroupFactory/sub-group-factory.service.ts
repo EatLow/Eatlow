@@ -12,6 +12,10 @@ export class SubGroupFactory
 
   public getSubGroup(subGroup: ISubGroup): SubGroup
   {
+    if (!subGroup)
+    {
+      subGroup = { id: 999, name: 'inconnu' }
+    }
     return new SubGroup(subGroup.id, subGroup.name)
   }
 }
