@@ -14,7 +14,7 @@ export class MealService {
   meals$ = new BehaviorSubject<IMeal[]>([]);
   selectedMeals$ = new BehaviorSubject<Meal[]>([]); //By Name or By ingredients
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.getAllMeals();
   }
 

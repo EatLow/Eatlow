@@ -1,70 +1,69 @@
-$menu-primary-color: #304F42;
+$menu-primary-color: #304f42;
 $menu-secondary-color: #446054;
 
 // energy Score colors
-$energyScoreRED: hsla(0, 75%, 71%, 1);			//ES > 4
-$energyScoreORANGE: hsla(30, 75%, 71%, 1);		//ES < 4
-$energyScoreYELLOW: hsla(50, 75%, 71%, 1);		//ES < 3
-$energyScoreSOFTGREEN: hsla(75, 75%, 71%, 1);	//ES < 2
-$energyScoreGREEN: hsla(144, 75%, 71%, 1);     //ES < 1
+$energyScoreRED: hsla(0, 75%, 71%, 1); //ES > 4
+$energyScoreORANGE: hsla(30, 75%, 71%, 1); //ES < 4
+$energyScoreYELLOW: hsla(50, 75%, 71%, 1); //ES < 3
+$energyScoreSOFTGREEN: hsla(75, 75%, 71%, 1); //ES < 2
+$energyScoreGREEN: hsla(144, 75%, 71%, 1); //ES < 1
 
 .background-blur {
-background-color: hsla(100, 0%, 100%, 0.1);
-backdrop-filter: blur(10px);
+  background-color: hsla(100, 0%, 100%, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 .energy-score-red {
-	color : $energyScoreRED;
-	background-color: $energyScoreRED;
-	text-shadow: 1px 1px 2px darken($energyScoreRED, 55%);
-
+  color: $energyScoreRED;
+  background-color: $energyScoreRED;
+  text-shadow: 1px 1px 2px darken($energyScoreRED, 55%);
 }
 
 .energy-score-orange {
-	color : $energyScoreORANGE;
-	background-color: $energyScoreORANGE;
-	text-shadow: 1px 1px 2px darken($energyScoreORANGE, 55%);
+  color: $energyScoreORANGE;
+  background-color: $energyScoreORANGE;
+  text-shadow: 1px 1px 2px darken($energyScoreORANGE, 55%);
 }
 
 .energy-score-yellow {
-	color : $energyScoreYELLOW;
-	background-color: $energyScoreYELLOW;
-	text-shadow: 1px 1px 2px darken($energyScoreYELLOW, 55%);
+  color: $energyScoreYELLOW;
+  background-color: $energyScoreYELLOW;
+  text-shadow: 1px 1px 2px darken($energyScoreYELLOW, 55%);
 }
 
 .energy-score-softgreen {
-	color : $energyScoreSOFTGREEN;
-	background-color: $energyScoreSOFTGREEN;
-	text-shadow: 1px 1px 2px darken($energyScoreSOFTGREEN, 55%);
+  color: $energyScoreSOFTGREEN;
+  background-color: $energyScoreSOFTGREEN;
+  text-shadow: 1px 1px 2px darken($energyScoreSOFTGREEN, 55%);
 }
 
 .energy-score-green {
-	color : $energyScoreGREEN;
-	background-color: $energyScoreGREEN;
-	text-shadow: 1px 1px 2px darken($energyScoreGREEN, 55%);
+  color: $energyScoreGREEN;
+  background-color: $energyScoreGREEN;
+  text-shadow: 1px 1px 2px darken($energyScoreGREEN, 55%);
 }
 
 .energy-score-no-shadow-red {
-    color : $energyScoreRED;
-    background-color: $energyScoreRED;
+  color: $energyScoreRED;
+  background-color: $energyScoreRED;
 }
 
 .energy-score-no-shadow-orange {
-    color : $energyScoreORANGE;
-    background-color: $energyScoreORANGE;
+  color: $energyScoreORANGE;
+  background-color: $energyScoreORANGE;
 }
 
 .energy-score-no-shadow-yellow {
-    color : $energyScoreYELLOW;
-    background-color: $energyScoreYELLOW;
+  color: $energyScoreYELLOW;
+  background-color: $energyScoreYELLOW;
 }
 
 .energy-score-no-shadow-softgreen {
-    color : $energyScoreSOFTGREEN;
-    background-color: $energyScoreSOFTGREEN;
+  color: $energyScoreSOFTGREEN;
+  background-color: $energyScoreSOFTGREEN;
 }
 
 .energy-score-no-shadow-green {
-    color : $energyScoreGREEN;
-    background-color: $energyScoreGREEN;
+  color: $energyScoreGREEN;
+  background-color: $energyScoreGREEN;
 }
