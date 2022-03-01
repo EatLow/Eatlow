@@ -10,7 +10,8 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		width: 49%;
+		width: 50%;
+		height: 50%;
 		text-align: center;
 	}
 }
@@ -33,4 +34,8 @@ h1 {
 
 .active:hover{
   color: hsla(144, 75%, 71%, 1);
+}
+
+accueil-pic-button {
+	padding: 15px;
 }

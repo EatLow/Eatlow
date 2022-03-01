@@ -8,16 +8,16 @@
     <span class="span-toggle"></span>
 
     <ul id="menu">
-      <a href="#">
+      <a [routerLink]="['']">
         <li>Accueil</li>
       </a>
-      <a href="#">
+      <a [routerLink]="['recherche', 'ingredients']">
         <li>Rechercher</li>
       </a>
-      <a href="#">
+      <!-- <a [routerLink]="[]">
         <li>Recettes</li>
-      </a>
-      <a href="#">
+      </a> -->
+      <a [routerLink]="['historique']">
         <li>Plats consommés</li>
       </a>
       <div></div>
