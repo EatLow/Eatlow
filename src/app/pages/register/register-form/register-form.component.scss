@@ -1,7 +1,5 @@
-$energyScoreGREEN: hsla(144, 75%, 71%, 1); 
+@import 'src/colors.scss';
 
-a {
-    color : $energyScoreGREEN;
-	background-color: hsla(144, 75%, 71%, 0);
-	text-shadow: 1px 1px 2px darken($energyScoreGREEN, 55%);
+.energy-score-green {
+	background-color: hsla(0, 0%, 100%, 0);
 }

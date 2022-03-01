@@ -8,6 +8,10 @@ $energyScoreYELLOW: hsla(50, 75%, 71%, 1);		//ES < 3
 $energyScoreSOFTGREEN: hsla(75, 75%, 71%, 1);	//ES < 2
 $energyScoreGREEN: hsla(144, 75%, 71%, 1);     //ES < 1
 
+.background-blur {
+background-color: hsla(100, 0%, 100%, 0.1);
+backdrop-filter: blur(10px);
+}
 
 .energy-score-red {
 	color : $energyScoreRED;
