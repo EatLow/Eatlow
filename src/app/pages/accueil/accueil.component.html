@@ -3,19 +3,29 @@
 <div class="container mother bg-opaque">
   <div class="row">
     <div class="col colorize active">
-      <accueil-pic-button routerLink="login" (mouseover)="mouseEvHandler(false)" (mouseenter)="mouseEvHandler(false)" (mouseout)="mouseEvHandler(true)" [urlPic]="hover? 'https://i.gyazo.com/bb0d01b52e09c5f2add10d676f05431f.png' : 'https://i.gyazo.com/0f42727264d838ef538eea5259a25c88.png'" title="Rechercher"></accueil-pic-button>
+      <accueil-pic-button routerLink="searchIngredients" (mouseover)="mouseEvHandler(false)"
+        (mouseenter)="mouseEvHandler(false)" (mouseout)="mouseEvHandler(true)"
+        [urlPic]="hover? 'https://i.gyazo.com/bb0d01b52e09c5f2add10d676f05431f.png' : 'https://i.gyazo.com/0f42727264d838ef538eea5259a25c88.png'"
+        title="Rechercher"></accueil-pic-button>
     </div>
     <div [ngClass]="isAuth?'col colorize active':'col colorize'">
-      <accueil-pic-button [routerLink]="isAuth?'history':null" (mouseover)="mouseEvHandler2(false)" (mouseenter)="mouseEvHandler2(false)" (mouseout)="mouseEvHandler2(true)" [urlPic]="hover2? 'https://i.gyazo.com/7d98ea73ebe008fcbd93ecd0f8a268be.png' : 'https://i.gyazo.com/0ef8c97a8f65704a1be9e37848210bf7.png'" title="Historique"></accueil-pic-button>
+      <accueil-pic-button [routerLink]="isAuth?'history':null" (mouseover)="mouseEvHandler2(false)"
+        (mouseenter)="mouseEvHandler2(false)" (mouseout)="mouseEvHandler2(true)"
+        [urlPic]="hover2? 'https://i.gyazo.com/7d98ea73ebe008fcbd93ecd0f8a268be.png' : 'https://i.gyazo.com/0ef8c97a8f65704a1be9e37848210bf7.png'"
+        title="Historique"></accueil-pic-button>
     </div>
   </div>
   <div class="row">
     <div class="col colorize">
-      <accueil-pic-button [urlPic]="hover3? 'https://i.gyazo.com/0c4e18a3b40bd1d66638883be23b25a4.png' : 'https://i.gyazo.com/c6d27c5950f8907926e259351781a991.png'" title="WIP"></accueil-pic-button>
+      <accueil-pic-button
+        [urlPic]="hover3? 'https://i.gyazo.com/0c4e18a3b40bd1d66638883be23b25a4.png' : 'https://i.gyazo.com/c6d27c5950f8907926e259351781a991.png'"
+        title="WIP"></accueil-pic-button>
     </div>
     <div class="col colorize">
-      <accueil-pic-button [urlPic]="hover4? 'https://i.gyazo.com/0c4e18a3b40bd1d66638883be23b25a4.png' : 'https://i.gyazo.com/c6d27c5950f8907926e259351781a991.png'" title="WIP"></accueil-pic-button>
-   </div>
+      <accueil-pic-button
+        [urlPic]="hover4? 'https://i.gyazo.com/0c4e18a3b40bd1d66638883be23b25a4.png' : 'https://i.gyazo.com/c6d27c5950f8907926e259351781a991.png'"
+        title="WIP"></accueil-pic-button>
+    </div>
   </div>
 </div>
 <accueil-logging-buttons></accueil-logging-buttons>
