@@ -17,23 +17,26 @@ export class PlatComponent implements OnInit
   public id: string = '';
   public isDetails = false;
   public meal!: Meal;
-public energyCost?: EnergyCost;
+  public energyCost?: EnergyCost;
+
 
   constructor(
     private _route: ActivatedRoute,
     private _mealService: MealService,
-    private _mealFactory: MealFactory
-  ) { }
+    private _mealFactory: MealFactory)
+  {
 
+  }
+  ngOnInit(): void
+  {
+    this._route.params.subscribe(params =>
+    {
 
-  constructor(private _route: ActivatedRoute, private _mealService: MealService,
-    private _mealFactory: MealFactory) {
-    this._route.params.subscribe(params => {    //simple récup params we can do a .map on params
-  
       this.id = params['id'];
-      this._mealService.getOneMeal(this.id).subscribe((meal: IMeal) => {
-       this.meal = this._mealFactory.getMeal(meal);
-       this.energyCost = this.meal.energyCost;
+      this._mealService.getOneMeal(this.id).subscribe((meal: IMeal) =>
+      {
+        this.meal = this._mealFactory.getMeal(meal);
+        this.energyCost = this.meal.energyCost;
       })
     });
   }
