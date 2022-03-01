@@ -13,6 +13,9 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "~13.2.2",
+    "@angular/cli": "~13.2.2",
+    "@angular/compiler-cli": "~13.2.0",
     "@angular/animations": "~13.2.0",
     "@angular/common": "~13.2.0",
     "@angular/compiler": "~13.2.0",
@@ -31,9 +34,6 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~13.2.2",
-    "@angular/cli": "~13.2.2",
-    "@angular/compiler-cli": "~13.2.0",
     "@types/jasmine": "~3.10.0",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
