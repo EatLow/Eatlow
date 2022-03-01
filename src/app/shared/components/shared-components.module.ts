@@ -6,6 +6,7 @@ import { ChartDoughnutComponent } from './chart-doughnut/chart-doughnut.componen
 import { ConnectionButtonComponent } from './connection-button/connection-button.component';
 import { TitleComponent } from './title/title.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     ChartDoughnutComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [
     TitleComponent,
