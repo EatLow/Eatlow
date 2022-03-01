@@ -9,7 +9,6 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class LoginFormComponent implements OnInit
 {
-
   public loginForm: FormGroup = new FormGroup({
     email: new FormControl(''),
     password: new FormControl('')
