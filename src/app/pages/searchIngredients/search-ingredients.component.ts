@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { IIngredient } from 'src/app/shared/models/ingredient/ingredient';
+import { IngredientService } from 'src/app/shared/services/ingredient.service';
 
 @Component({
   selector: 'app-search-ingredients',
@@ -13,7 +15,8 @@ export class SearchIngredientsComponent implements OnInit {
   public searchForm: FormGroup = new FormGroup({
     search: new FormControl('', Validators.required),
   })
-  constructor() { }
+  public ingredients : IIngredient[]=[];
+  constructor(private ingredientService : IngredientService) { }
 
   ngOnInit(): void
   {
@@ -23,5 +26,12 @@ export class SearchIngredientsComponent implements OnInit {
 
   }
 
+  onClick(inputValue : string){
+    console.log(inputValue);
+    if (inputValue !== "") {
+    this.ingredientService.getIngredientsByName(inputValue).subscribe((ingredients:IIngredient[]) => {
+      this.ingredients = ingredients;
+      });
+  }}
 
 }
