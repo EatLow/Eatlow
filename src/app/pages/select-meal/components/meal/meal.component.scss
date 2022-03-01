@@ -1,0 +1,24 @@
+.pic {
+  @media screen and (max-width: 1024px) {
+    height: clamp(0px, 25vw, 500px);
+  }
+  height: clamp(0px, 25vh, 500px);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  margin-bottom: auto;
+}
+
+a-pic:hover {
+  border: orange;
+}
+
+.button-name {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: black;
+  font-size: clamp(0px, 3vw, 50px);
+}
+

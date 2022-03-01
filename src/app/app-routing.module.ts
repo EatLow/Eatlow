@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AccueilComponent } from './pages/accueil/accueil.component';
 
 import { IsNotLoggedInGuard } from './shared/guards/is-not-logged-in.guard';
 
 
 const routes: Routes = [
-  { path: '/', loadChildren: () => import('./pages/accueil/accueil.module').then(m => m.AccueilModule) },
+  { path: 'acc', loadChildren: () => import('./pages/accueil/accueil.module').then(m => m.AccueilModule) },
+  { path: 'meal', loadChildren: () => import('./pages/select-meal/select-meal.module').then(m => m.SelectMealModule) },
 	{
 		path: 'register',
 		canActivate: [IsNotLoggedInGuard],

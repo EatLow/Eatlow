@@ -5,15 +5,40 @@
   margin-bottom: 5%;
   margin-left: auto;
   margin-right: auto;
-  padding-top: clamp(0px, 5%, 80px);
-  padding-bottom: clamp(0px, 5%, 80px);
-  padding-right: clamp(0px, 10%, 100px);
-  padding-left: clamp(0px, 10%, 100px);
-  border: 1px solid black;
-  border-radius: 15%;
-  background: rgba(255, 255, 255, 0.75);
 }
 
 .col {
   border: 1px solid black;
+  border-color: black;
+  border-radius: 15%;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background: rgba(255, 255, 255, 0.75);
+  max-width: 40%;
+}
+
+.searchb {
+  display: block  ;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.meal-title {
+    @media screen and (min-width: 425px)
+    {
+      margin-left: 10%;
+    }
+  margin-top: 5%;
+  display: block  ;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.space {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
 }
