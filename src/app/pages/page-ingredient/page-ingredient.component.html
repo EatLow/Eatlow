@@ -11,31 +11,15 @@
         <div [ngClass]="'environemental-footer-dqr ' + setColor()">
           <p>DQR {{ shortenedNumber(ingredient.dqr) }}</p>
         </div>
-        <i class="environemental-footer-pop-modal fa-solid fa-circle-info" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+        <i class="environemental-footer-pop-modal fa-solid fa-circle-info" data-bs-toggle="modal" data-bs-target="#modal"></i>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Informations</h5>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body text-center">
-          <p>Sans unité, plus le score est bas plus son impact sur l'environnement est faible. Ce score unique est une moyenne pondérée de 16 indicateurs (), calculé selon la méthodologie européenne « PEF » (Product Environmental Footprint).</p>
-          <p>DQR:
-            Ce chiffre correspond au Data Quality Ratio (DQR), il indique le niveau de confiance que l'on peut avoir dans le score. Plus le DQR est proche de 1, plus la donnée est fiable ; plus la valeur se rapproche de 5, plus le score rend compte d'une incertitude importante. Une donnée avec un DQR >= 3 est considérée comme peu fiable. </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <app-modal [title]="'Informations'"
+    [content]="['Score environemental:','Sans unité, plus le score est bas plus son impact sur l\'environnement est faible. Ce score unique est une moyenne pondérée de 16 indicateurs (), calculé selon la méthodologie européenne « PEF » (Product Environmental Footprint).','DQR:',' Ce chiffre correspond au Data Quality Ratio (DQR), il indique le niveau de confiance que l\'on peut avoir dans le score. Plus le DQR est proche de 1, plus la donnée est fiable ; plus la valeur se rapproche de 5, plus le score rend compte d\'une incertitude importante. Une donnée avec un DQR >= 3 est considérée comme peu fiable.']">
+  </app-modal>
+
   <div class="doughnut-container">
       <app-chart-doughnut class="doughnut bg-opaque" [energyCost]="ingredient.energyCost"></app-chart-doughnut>
   </div>
@@ -48,5 +32,5 @@
 </div>
 
 <div *ngIf="isError">
-  <div>Ajouter un component error <!-- TODO ajouter un component error --></div>
+  <div class="text-danger text-center">Désolé mon céleri une erreur est survenue !</div>
 </div>

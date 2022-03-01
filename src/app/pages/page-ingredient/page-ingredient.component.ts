@@ -13,7 +13,7 @@ import { NumberParse } from 'src/app/shared/services/numberParse';
 })
 export class PageIngredientComponent implements OnInit {
   public isLoading:boolean = true;
-  public isError:boolean = false;
+  public isError: boolean = false;
   public ingredient!:Ingredient;
   
   constructor(private router :ActivatedRoute, private _ingredientservice :IngredientService) { }

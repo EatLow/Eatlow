@@ -4,6 +4,7 @@ import { SubTitleComponent } from 'src/app/shared/components/sub-title/sub-title
 import { ChartDoughnutComponent } from './chart-doughnut/chart-doughnut.component';
 
 import { ConnectionButtonComponent } from './connection-button/connection-button.component';
+import { ModalComponent } from './modal/modal.component';
 import { TitleComponent } from './title/title.component';
 
 
@@ -13,7 +14,8 @@ import { TitleComponent } from './title/title.component';
     TitleComponent,
     SubTitleComponent,
     ConnectionButtonComponent,
-    ChartDoughnutComponent
+    ChartDoughnutComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule
@@ -22,7 +24,8 @@ import { TitleComponent } from './title/title.component';
     TitleComponent,
     SubTitleComponent,
     ConnectionButtonComponent,
-    ChartDoughnutComponent
+    ChartDoughnutComponent,
+    ModalComponent
   ]
 })
 export class SharedComponentsModule { }
