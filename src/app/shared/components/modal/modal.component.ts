@@ -13,6 +13,9 @@ export class ModalComponent implements OnInit {
   @Input()
   content: string[] = [];
 
+  @Input()
+  modalId: string = '';
+
   constructor() { }
 
   ngOnInit(): void {
