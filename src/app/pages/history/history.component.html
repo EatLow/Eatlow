@@ -1,16 +1,13 @@
 <div class="container">
     <div class="row header">
-        <div class="col"></div>
         <div class="col">
-            <div class="mt-4">
-                <app-search-bar></app-search-bar>
-            </div>
-        </div>
-        <div class="row">
             <app-title></app-title>
         </div>
         <div class="row">
-            <p class="text-center">Plats consommés</p>
+            <app-search-bar></app-search-bar>
+        </div>
+        <div class="row">
+            <p class="text-center fs-5">Plats consommés</p>
         </div>
     </div>
     <app-history-list *ngIf="!isLoading" [consomations]="consumables"></app-history-list>
