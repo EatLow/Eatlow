@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { AuthService } from '../../../../shared/services/auth.service';
 
@@ -7,7 +7,7 @@ import { AuthService } from '../../../../shared/services/auth.service';
   templateUrl: './logging-buttons.component.html',
   styleUrls: ['./logging-buttons.component.scss']
 })
-export class LoggingButtonsComponent implements OnInit
+export class LoggingButtonsComponent implements OnInit, OnDestroy 
 {
   public isAuth: boolean = false;
 
@@ -19,6 +19,10 @@ export class LoggingButtonsComponent implements OnInit
     {
       this.isAuth = isAuth;
     })
+  }
+
+  ngOnDestroy() {
+    this._authService.isAuth$.unsubscribe();
   }
 
 }
