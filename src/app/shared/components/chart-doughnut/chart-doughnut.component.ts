@@ -3,6 +3,7 @@ import { Chart, registerables } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 import { EnergyCost } from '../../models/energyCost/energy-cost';
+import { NumberParse } from '../../services/numberParse';
 
 enum Colors
 {
@@ -74,9 +75,8 @@ export class ChartDoughnutComponent implements OnInit
     });
   }
 
-  private centerText(): any
-  {
-    const ecoScore = this.energyCost.ecoScore;
+  private centerText(): any {
+    const ecoScore = NumberParse.shortenedNumber(this.energyCost.ecoScore);
     const color = this.color();
     const size = window.innerWidth >= 425 ? "30px" : "20px";
 
@@ -102,13 +102,13 @@ export class ChartDoughnutComponent implements OnInit
     return centerText;
   }
 
-  private color(): string
-  {
+  private color(): string {
+    const ecoScore = NumberParse.shortenedNumber(this.energyCost.ecoScore);
     let color: string = '';
-    if (this.energyCost.ecoScore > 0 && this.energyCost.ecoScore <= 1) color = Colors.GREEN;
-    else if (this.energyCost.ecoScore > 1 && this.energyCost.ecoScore <= 2) color = Colors.SOFTGREEN;
-    else if (this.energyCost.ecoScore > 2 && this.energyCost.ecoScore <= 3) color = Colors.YELLOW;
-    else if (this.energyCost.ecoScore > 3 && this.energyCost.ecoScore < 4) color = Colors.ORANGE;
+    if (ecoScore > 0 && ecoScore <= 1) color = Colors.GREEN;
+    else if (ecoScore > 1 && ecoScore <= 2) color = Colors.SOFTGREEN;
+    else if (ecoScore > 2 && ecoScore <= 3) color = Colors.YELLOW;
+    else if (ecoScore > 3 && ecoScore < 4) color = Colors.ORANGE;
     else color = Colors.RED;
     return color;
   }
