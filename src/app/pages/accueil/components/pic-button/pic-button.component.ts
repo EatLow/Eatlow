@@ -13,15 +13,10 @@ export class PicButtonComponent implements OnInit
   @Input()
   public title!: string;
 
-  @Input("disabled")
-  public disabled: boolean = false;
-
   constructor() { }
 
   ngOnInit(): void
   {
   }
-
-
 
 }

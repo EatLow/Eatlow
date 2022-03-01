@@ -11,3 +11,11 @@
   padding-left: clamp(0px, 10%, 100px);
   border-radius: 15%;
 }
+
+.colorize{
+    color: black;
+}
+
+.active:hover{
+  color: hsla(144, 75%, 71%, 1);
+}

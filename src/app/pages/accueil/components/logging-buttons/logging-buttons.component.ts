@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { AuthService } from '../../../../shared/services/auth.service';
 
 @Component({
   selector: 'accueil-logging-buttons',
@@ -7,14 +9,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class LoggingButtonsComponent implements OnInit
 {
-  @Input("disabled")
-  public disabled: boolean = true;
+  public isAuth: boolean = false;
 
-  constructor() { }
+  constructor(private _authService: AuthService) { }
 
   ngOnInit(): void
   {
-
+    this._authService.isAuth$.subscribe((isAuth: boolean) =>
+    {
+      this.isAuth = isAuth;
+    })
   }
 
 }
