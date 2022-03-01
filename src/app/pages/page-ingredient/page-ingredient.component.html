@@ -1,6 +1,9 @@
+<app-title></app-title>
 <div *ngIf="ingredient">
   <div class="wrapper-aliment">
-    <h2 class="text-center">{{ ingredient.name }}</h2>
+    <div class="ingredient-name">
+      <h2 class="text-center background-blur">{{ ingredient.name }}</h2>
+    </div>
     <div class="environemental-score text-center bg-opaque">
       <p class="environemental-score-txt">Score environemental</p>
       <p [ngClass]="'environemental-score-txt-score ' + setColor()">

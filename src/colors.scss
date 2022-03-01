@@ -43,3 +43,28 @@ backdrop-filter: blur(10px);
 	background-color: $energyScoreGREEN;
 	text-shadow: 1px 1px 2px darken($energyScoreGREEN, 55%);
 }
+
+.energy-score-no-shadow-red {
+    color : $energyScoreRED;
+    background-color: $energyScoreRED;
+}
+
+.energy-score-no-shadow-orange {
+    color : $energyScoreORANGE;
+    background-color: $energyScoreORANGE;
+}
+
+.energy-score-no-shadow-yellow {
+    color : $energyScoreYELLOW;
+    background-color: $energyScoreYELLOW;
+}
+
+.energy-score-no-shadow-softgreen {
+    color : $energyScoreSOFTGREEN;
+    background-color: $energyScoreSOFTGREEN;
+}
+
+.energy-score-no-shadow-green {
+    color : $energyScoreGREEN;
+    background-color: $energyScoreGREEN;
+}
