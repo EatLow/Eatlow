@@ -7,6 +7,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent implements OnInit {
+
   @Output() callBackEvent = new EventEmitter();
   @ViewChild("input") input!:ElementRef ;
 

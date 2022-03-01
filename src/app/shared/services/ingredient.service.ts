@@ -2,31 +2,38 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Ingredient, IIngredient } from '../models/ingredient/ingredient';
+
+import { IIngredient } from '../models/ingredient/ingredient';
 
 @Injectable({
   providedIn: 'root'
 })
-export class IngredientService {
+export class IngredientService
+{
 
   private urlApiIngredients = environment.urlApi + '/api/public/ingredients';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient)
+  {
   }
 
-  getAllIngredients(): Observable<IIngredient[]> {
+  getAllIngredients(): Observable<IIngredient[]>
+  {
     return this.http.get<IIngredient[]>(`${this.urlApiIngredients}`);
   }
 
-  getOneIngredient(id: string): Observable<IIngredient> {
+  getOneIngredient(id: string): Observable<IIngredient>
+  {
     return this.http.get<IIngredient>(`${this.urlApiIngredients}/${id}`);
   }
 
-  getIngredientsByName(name: string): Observable<IIngredient[]> {
+  getIngredientsByName(name: string): Observable<IIngredient[]>
+  {
     return this.http.get<IIngredient[]>(`${this.urlApiIngredients}/search/${name}`);
   }
 
-  getIngredientsFromMeal(id: string): Observable<IIngredient[]> {
-    return this.http.get<Ingredient[]>(`${this.urlApiIngredients}/ByMeal/${id}`);
+  getIngredientsFromMeal(id: string): Observable<IIngredient[]>
+  {
+    return this.http.get<IIngredient[]>(`${this.urlApiIngredients}/ByMeal/${id}`);
   }
 }
