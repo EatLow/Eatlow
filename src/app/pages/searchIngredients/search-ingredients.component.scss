@@ -17,3 +17,11 @@ div {
   width: 100%;
   max-width: 600px;
 }
+
+.ingredient {
+  &:hover,
+  :active {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-out;
+  }
+}
