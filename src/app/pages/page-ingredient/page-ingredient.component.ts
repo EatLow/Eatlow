@@ -13,17 +13,17 @@ import { NumberParse } from 'src/app/shared/services/numberParse';
 })
 export class PageIngredientComponent implements OnInit {
   public isLoading:boolean = true;
-  public isError:boolean = false;
+  public isError: boolean = false;
   public ingredient!:Ingredient;
   
   constructor(private router :ActivatedRoute, private _ingredientservice :IngredientService) { }
   public setColor() :string {
     let color: string = '';
-    if (this.ingredient.ecoScore > 0 && this.ingredient.ecoScore <= 1) color = "green";
-    else if (this.ingredient.ecoScore > 1 && this.ingredient.ecoScore <= 2) color = "softgreen";
-    else if (this.ingredient.ecoScore > 2 && this.ingredient.ecoScore <= 3) color = "yellow";
-    else if (this.ingredient.ecoScore > 3 && this.ingredient.ecoScore < 4) color = "orange";
-    else color = "red";
+    if (this.ingredient.ecoScore > 0 && this.ingredient.ecoScore <= 1) color = "energy-score-no-shadow-green";
+    else if (this.ingredient.ecoScore > 1 && this.ingredient.ecoScore <= 2) color = "energy-score-no-shadow-softgreen";
+    else if (this.ingredient.ecoScore > 2 && this.ingredient.ecoScore <= 3) color = "energy-score-no-shadow-yellow";
+    else if (this.ingredient.ecoScore > 3 && this.ingredient.ecoScore < 4) color = "energy-score-no-shadow-orange";
+    else color = "energy-score-no-shadow-red";
     return color;
   }
   
