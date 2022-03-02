@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <form [formGroup]="formSearch" (ngSubmit)="onSubmit()" class="d-flex w-100">
       <input formControlName="search" class="form-control  me-2 navsearch" type="search" placeholder="Search"
-        aria-label="Search" #input>
+        aria-label="Search">
       <button [disabled]="!formSearch.valid" class="btn btn-success" type="submit">Rechercher</button>
     </form>
   </div>
