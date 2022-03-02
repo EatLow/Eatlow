@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -6,17 +6,15 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.scss']
 })
-export class SearchBarComponent implements OnInit {
+export class SearchBarComponent {
 
   @Output() callBackEvent = new EventEmitter();
 
-formSearch : FormGroup = new FormGroup({
-  search : new FormControl('', Validators.required)
-})
+  formSearch: FormGroup = new FormGroup({
+    search: new FormControl('', Validators.required)
+  })
 
   constructor() { }
-
-  ngOnInit(): void {}
 
   onSubmit() {
     if(this.formSearch.valid){
